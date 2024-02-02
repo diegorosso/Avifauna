@@ -38,7 +38,7 @@
     </div>
 
     <div class="img-container">
-      <img class="img" src="../assets/photos/DSC01286.JPG" alt="" />
+      <img class="img" src="../assets/photos/DSC01286.jpg" alt="" />
     </div>
   </section>
 </template>

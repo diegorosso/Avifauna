@@ -20,11 +20,11 @@
               loading="lazy"
               alt=""
               class="schedule-img w-100"
-              src="../assets/photos/DSC01286.JPG"
+              src="../assets/photos/DSC01286.jpg"
             />
 
             <img
-              src="../assets/photos/DSC01266.JPG"
+              src="../assets/photos/DSC01266.jpg"
               width="386"
               height="250"
               loading="lazy"
@@ -35,7 +35,7 @@
 
           <div class="banner-col">
             <img
-              src="../assets/photos/DSC01205.JPG"
+              src="../assets/photos/DSC01205.jpg"
               width="250"
               height="277"
               loading="lazy"
@@ -49,7 +49,7 @@
               loading="lazy"
               alt=""
               class="schedule-img w-100"
-              src="../assets/photos/DSC00929.JPG"
+              src="../assets/photos/DSC00929.jpg"
             />
           </div>
         </div>

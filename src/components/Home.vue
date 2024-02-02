@@ -137,8 +137,6 @@
 @media (min-width: 992px) {
   .hero {
     background-image: url("../assets/photos/DSC01202.jpg");
-    /* background-image: url("../assets/photos/DSC00885.JPG"); */
-
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;
