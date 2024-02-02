@@ -2,11 +2,11 @@
 import Header from "./components/Header.vue";
 import Home from "./components/Home.vue";
 import Feature from "./components/Feature.vue";
-import About from "./components/About.vue";
+import Schedule from "./components/Schedule.vue";
 import Cta from "./components/Cta.vue";
-import Service from "./components/Service.vue";
-import Donated from "./components/Donated.vue";
-import Partner  from "./components/Partner.vue"
+import About from "./components/About.vue";
+// import Service from "./components/Service.vue";
+// import Donated from "./components/Donated.vue";
 import Event from "./components/Event.vue"
 import Galeri from "./components/Galeri.vue"
 import Footer from "./components/Footer.vue"
@@ -17,11 +17,11 @@ import Footer from "./components/Footer.vue"
     <Header></Header>
     <Home></Home>
     <Feature></Feature>
-    <About></About>
+    <Schedule></Schedule>
     <Cta></Cta>
+    <About></About>
     <Service></Service>
     <Donated></Donated>
-    <Partner></Partner>
     <Event></Event>
     <Galeri></Galeri>
     <Footer></Footer>

@@ -4,29 +4,26 @@
       <ul class="features-list">
         <li class="features-item">
           <div class="item-icon">
-            <ion-icon name="shield-checkmark-outline"></ion-icon>
+            <ion-icon name="earth-outline"></ion-icon>
+            <!-- <ion-icon name="heart-outline"></ion-icon> -->
           </div>
 
           <div>
-            <h3 class="h4 item-title">Safe Shelter</h3>
+            <h3 class="h4 item-title">95% de animales irrecuperables</h3>
 
-            <p class="item-text">
+            <!-- <p class="item-text">
               Sit amet consecte adiscine eiusm temor ultrices.
-            </p>
+            </p> -->
           </div>
         </li>
 
         <li class="features-item">
           <div class="item-icon">
-            <ion-icon name="water-outline"></ion-icon>
+            <ion-icon name="egg-outline"></ion-icon>
           </div>
 
           <div>
-            <h3 class="h4 item-title">Safe Water</h3>
-
-            <p class="item-text">
-              Sit amet consecte adiscine eiusm temor ultrices.
-            </p>
+            <h3 class="h4 item-title">Más de 150 especies</h3>
           </div>
         </li>
 
@@ -36,25 +33,17 @@
           </div>
 
           <div>
-            <h3 class="h4 item-title">Ecology Save</h3>
-
-            <p class="item-text">
-              Sit amet consecte adiscine eiusm temor ultrices.
-            </p>
+            <h3 class="h4 item-title">Sostenibilidad natural</h3>
           </div>
         </li>
 
         <li class="features-item">
           <div class="item-icon">
-            <ion-icon name="snow-outline"></ion-icon>
+            <ion-icon name="school-outline"></ion-icon>
           </div>
 
           <div>
-            <h3 class="h4 item-title">Environment</h3>
-
-            <p class="item-text">
-              Sit amet consecte adiscine eiusm temor ultrices.
-            </p>
+            <h3 class="h4 item-title">Educacion ambiental</h3>
           </div>
         </li>
       </ul>
@@ -73,20 +62,22 @@
 }
 
 .features-list {
-  display: grid;
-  gap: 30px;
+  /* display: grid; */
+  /* gap: 30px; */
+  display: flex;
+  justify-content: space-around;
 }
 
 .features-item {
   display: flex;
-  align-items: flex-start;
-  gap: 25px;
+  align-items: center;
+  /* gap: 25px; */
 }
 
 .features-item .item-icon {
-  color: #87ceeb;
+  color: #82ad45;
   font-size: 5.5rem;
-  margin-block-start: 10px;
+  margin-right: .1em;
 }
 
 .features-item .item-icon ion-icon {
@@ -107,10 +98,6 @@
   .features {
     padding-block-start: var(--section-padding);
   }
-
-  .features-list {
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
 @media (min-width: 1200px) {
   .features {
@@ -119,5 +106,4 @@
     background-color: transparent;
   }
 }
-
 </style>

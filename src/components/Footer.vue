@@ -3,18 +3,13 @@
     <div class="container">
       <ul class="footer-list">
         <li>
-          <a href="#" class="footer-link">Terms of use</a>
+          <a href="https://www.facebook.com/avifauna.lugo" class="footer-link">Síguenos en Facebook</a>
         </li>
 
         <li>
-          <a href="#" class="footer-link">Privacy & Policy</a>
+          <a href="https://www.instagram.com/avifaunalugo/" class="footer-link">Síguenos en Instagram</a>
         </li>
       </ul>
-
-      <p class="copyright">
-        Copyright 2022 <a href="#" class="copyright-link">Maca Trolo</a>. All
-        Rights Reserved.
-      </p>
     </div>
   </footer>
 </template>
@@ -33,8 +28,7 @@
   padding: 20px;
 }
 
-.footer-list,
-.copyright {
+.footer-list {
   max-width: max-content;
   margin-inline: auto;
 }
@@ -47,8 +41,7 @@
   margin-block-end: 15px;
 }
 
-.footer-link,
-.copyright-link {
+.footer-link {
   text-decoration: underline;
   transition: var(--transition-1);
 }
@@ -57,16 +50,8 @@
   color: var(--white_50);
 }
 
-:is(.footer-link, .copyright-link):is(:hover, :focus) {
+:is(.footer-link):is(:hover, :focus) {
   background-color: hsla(0, 0%, 100%, 0.05);
-}
-
-.copyright {
-  text-align: center;
-}
-
-.copyright-link {
-  display: inline-block;
 }
 
 @media (min-width: 1200px) {

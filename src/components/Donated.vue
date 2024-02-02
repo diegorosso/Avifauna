@@ -6,7 +6,7 @@
           <div class="donate-card">
             <figure class="card-banner">
               <img
-                src="../assets/imagenes/donated-1.jpg"
+                src="../assets/images/donated-1.jpg"
                 width="520"
                 height="325"
                 loading="lazy"
@@ -65,7 +65,7 @@
           <div class="donate-card">
             <figure class="card-banner">
               <img
-                src="../assets/imagenes/donated-2.jpg"
+                src="../assets/images/donated-2.jpg"
                 width="520"
                 height="325"
                 loading="lazy"
@@ -124,7 +124,7 @@
           <div class="donate-card">
             <figure class="card-banner">
               <img
-                src="../assets/imagenes/donated-3.jpg"
+                src="../assets/images/donated-3.jpg"
                 width="520"
                 height="325"
                 loading="lazy"
@@ -183,7 +183,7 @@
           <div class="donate-card">
             <figure class="card-banner">
               <img
-                src="../assets/imagenes/donated-4.jpg"
+                src="../assets/images/donated-4.jpg"
                 width="520"
                 height="325"
                 loading="lazy"
@@ -291,12 +291,12 @@
 .progress {
   height: 6px;
   width: 83%;
-  background-color: #87ceeb;
+  background-color: #82ad45;
   border-radius: inherit;
 }
 
 .progress-value {
-  color: #87ceeb;
+  color: #82ad45;
   font-size: var(--fs-7);
   font-weight: var(--fw-600);
 }
@@ -325,7 +325,7 @@
 }
 
 .card-wrapper-text .green {
-  color: #87ceeb;
+  color: #82ad45;
 }
 
 .card-wrapper-text .yellow {

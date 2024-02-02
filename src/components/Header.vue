@@ -27,19 +27,8 @@
 
         <ul class="navbar-list">
           <li>
-            <a href="#home" class="navbar-link" @click="closeNav">
-              <span>Home</span>
-
-              <ion-icon
-                name="chevron-forward-outline"
-                aria-hidden="true"
-              ></ion-icon>
-            </a>
-          </li>
-
-          <li>
             <a href="#about" class="navbar-link" @click="closeNav">
-              <span>About</span>
+              <span>El parque</span>
 
               <ion-icon
                 name="chevron-forward-outline"
@@ -49,8 +38,8 @@
           </li>
 
           <li>
-            <a href="#service" class="navbar-link" @click="closeNav">
-              <span>Service</span>
+            <a href="#animals" class="navbar-link" @click="closeNav">
+              <span>Animales</span>
 
               <ion-icon
                 name="chevron-forward-outline"
@@ -60,8 +49,8 @@
           </li>
 
           <li>
-            <a href="#donate" class="navbar-link" @click="closeNav">
-              <span>Donate</span>
+            <a href="#events" class="navbar-link" @click="closeNav">
+              <span>Actividades</span>
 
               <ion-icon
                 name="chevron-forward-outline"
@@ -71,8 +60,8 @@
           </li>
 
           <li>
-            <a href="#event" class="navbar-link" @click="closeNav">
-              <span>Event</span>
+            <a href="#investigation" class="navbar-link" @click="closeNav">
+              <span>Investigación</span>
 
               <ion-icon
                 name="chevron-forward-outline"
@@ -82,8 +71,19 @@
           </li>
 
           <li>
-            <a href="#" class="navbar-link" @click="closeNav">
-              <span>Contact</span>
+            <a href="#schedule" class="navbar-link" @click="closeNav">
+              <span>Horarios y tarifas</span>
+
+              <ion-icon
+                name="chevron-forward-outline"
+                aria-hidden="true"
+              ></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#contact" class="navbar-link" @click="closeNav">
+              <span>Contacto</span>
 
               <ion-icon
                 name="chevron-forward-outline"
@@ -174,13 +174,12 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 50px;
+  /* gap: 50px; */
 }
 .logo {
   color: var(--white);
   font-family: var(--ff-oswald);
   font-size: 3.2rem;
-  text-transform: uppercase;
 }
 .nav-open-btn {
   color: var(--white);
@@ -201,7 +200,7 @@ export default {
   transition: 0.25s var(--cubic-in);
 }
 .navbar.active {
-  transform: translateY(-100%);
+  /* transform: translateY(-100%); */
   visibility: visible;
   transition: 0.5s var(--cubic-out);
 }
@@ -238,7 +237,6 @@ export default {
   color: var(--white);
   font-size: var(--fs-9);
   font-weight: var(--fw-500);
-  text-transform: uppercase;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -247,12 +245,20 @@ export default {
   transition: var(--transition-1);
 }
 .navbar-link:is(:hover, :focus) {
-  background-color: #87ceeb;
+  background-color: #82ad45;
 }
 
 .header.transparent {
   background-color: transparent !important; /* Fondo transparente cuando isTransparent es verdadero */
   transition: background-color 0.3s ease !important; /* Agrega la transición solo para background-color */
+}
+
+@media (max-width: 991px) {
+  .navbar.active {
+    transform: translateY(-100%);
+    visibility: visible;
+    transition: 0.5s var(--cubic-out);
+  }
 }
 
 @media (min-width: 992px) {
@@ -263,7 +269,7 @@ export default {
   .header-action {
     display: flex;
     align-items: center;
-    gap: 50px;
+    /* gap: 50px; */
   }
 
   .search-btn {
@@ -326,13 +332,13 @@ export default {
   .navbar-list {
     all: unset;
     display: flex;
-    gap: 10px;
+    /* gap: 10px; */
+    justify-content: space-between;
   }
 
   .navbar-link {
     font-size: var(--fs-8);
     font-weight: var(--fw-600);
-    text-transform: capitalize;
     transition: var(--transition-2);
   }
 

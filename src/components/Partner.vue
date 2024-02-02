@@ -3,7 +3,7 @@
     <div class="container">
       <a href="#" class="partner-logo">
         <img
-          src="../assets/imagenes/partner-1.png"
+          src="../assets/images/partner-1.png"
           width="157"
           height="55"
           loading="lazy"
@@ -12,7 +12,7 @@
         />
 
         <img
-          src="../assets/imagenes/partner-1-active.png"
+          src="../assets/images/partner-1-active.png"
           width="157"
           height="55"
           loading="lazy"
@@ -23,7 +23,7 @@
 
       <a href="#" class="partner-logo">
         <img
-          src="../assets/imagenes/partner-2.png"
+          src="../assets/images/partner-2.png"
           width="163"
           height="55"
           loading="lazy"
@@ -32,7 +32,7 @@
         />
 
         <img
-          src="../assets/imagenes/partner-2-active.png"
+          src="../assets/images/partner-2-active.png"
           width="163"
           height="55"
           loading="lazy"
@@ -43,7 +43,7 @@
 
       <a href="#" class="partner-logo">
         <img
-          src="../assets/imagenes/partner-3.png"
+          src="../assets/images/partner-3.png"
           width="149"
           height="55"
           loading="lazy"
@@ -52,7 +52,7 @@
         />
 
         <img
-          src="../assets/imagenes/partner-3-active.png"
+          src="../assets/images/partner-3-active.png"
           width="149"
           height="55"
           loading="lazy"
@@ -63,7 +63,7 @@
 
       <a href="#" class="partner-logo">
         <img
-          src="../assets/imagenes/partner-4.png"
+          src="../assets/images/partner-4.png"
           width="169"
           height="58"
           loading="lazy"
@@ -72,7 +72,7 @@
         />
 
         <img
-          src="../assets/imagenes/partner-4-active.png"
+          src="../assets/images/partner-4-active.png"
           width="169"
           height="58"
           loading="lazy"
@@ -83,7 +83,7 @@
 
       <a href="#" class="partner-logo">
         <img
-          src="../assets/imagenes/partner-5.png"
+          src="../assets/images/partner-5.png"
           width="211"
           height="55"
           loading="lazy"
@@ -92,7 +92,7 @@
         />
 
         <img
-          src="../assets/imagenes/partner-5-active.png"
+          src="../assets/images/partner-5-active.png"
           width="211"
           height="55"
           loading="lazy"
@@ -104,17 +104,19 @@
   </section>
 </template>
 
-<style scope>
+<style scoped>
 .partner {
   background-color: var(--baby-powder);
+  padding-block: 2em;
+  width: 100%;
 }
 
 .partner .container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 50px;
+  /* gap: 50px; */
 }
 
 .partner-logo .color,

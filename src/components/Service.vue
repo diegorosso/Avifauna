@@ -134,11 +134,11 @@
 }
 
 .service-card:is(:hover, :focus-within) {
-  outline-color: #87ceeb;
+  outline-color: #82ad45;
 }
 
 .service-card .card-icon {
-  color: #87ceeb;
+  color: #82ad45;
   font-size: 7rem;
   max-width: max-content;
   margin-inline: auto;

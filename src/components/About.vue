@@ -1,279 +1,94 @@
 <template>
   <section class="section about" id="about">
-    <div class="container">
-      <div class="about-banner">
-        <h2 class="deco-title">About Us</h2>
-
+    <div class="txt-container">
+      <p class="section-subtitle">
         <img
-          src="../assets/imagenes/deco-img.png"
-          width="58"
-          height="261"
-          alt=""
-          class="deco-img"
+          src="../assets/images/subtitle-img-green.png"
+          width="32"
+          height="7"
+          alt="Wavy line"
         />
+        <span>Nuestro parque</span>
+      </p>
 
-        <div class="banner-row">
-          <div class="banner-col">
-            <img
-              src="../assets/imagenes/banner1.jpg"
-              width="315"
-              height="380"
-              loading="lazy"
-              alt=""
-              class="about-img w-100"
-            />
-
-            <img
-              src="../assets/imagenes/banner2.jpg"
-              width="386"
-              height="250"
-              loading="lazy"
-              alt=""
-              class="about-img about-img-2 w-100"
-            />
-          </div>
-
-          <div class="banner-col">
-            <img
-              src="../assets/imagenes/banner3.jpg"
-              width="250"
-              height="277"
-              loading="lazy"
-              alt=""
-              class="about-img about-img-3 w-100"
-            />
-
-            <img
-              src="../assets/imagenes/banner4.jpg"
-              width="315"
-              height="380"
-              loading="lazy"
-              alt=""
-              class="about-img w-100"
-            />
-          </div>
-        </div>
-      </div>
-
-      <div class="about-content">
-        <p class="section-subtitle">
-          <img
-            src="../assets/imagenes/subtitle-img-white.png"
-            width="32"
-            height="7"
-            alt="Wavy line"
-          />
-
-          <span>Why Choose Us</span>
+      <h2 class="h2 section-title">
+        La historia de cómo <strong>nació Avifauna</strong>
+      </h2>
+      <div class="section-text">
+        <p class="text">
+          En 1978, los hermanos Antonio y Francisco Ibañez Burgo adquirieron una
+          antigua cantera.
         </p>
-
-        <h2 class="h2 section-title">
-          Rise Your Hand to Save <strong>World Animals Life</strong>
-        </h2>
-
-        <ul class="tab-nav">
-          <li>
-            <button class="tab-btn active">Our Mission</button>
-          </li>
-
-          <li>
-            <button class="tab-btn">Our Vision</button>
-          </li>
-
-          <li>
-            <button class="tab-btn">Next Plan</button>
-          </li>
-        </ul>
-
-        <div class="tab-content">
-          <p class="section-text">
-            But I must explain to you how all this mistaken denouncing pleasure
-            and praising pain was born and I will give you a complete account of
-            the system expoundmaster
-          </p>
-
-          <ul class="tab-list">
-            <li class="tab-item">
-              <div class="item-icon">
-                <ion-icon name="checkmark-circle"></ion-icon>
-              </div>
-
-              <p class="tab-text">Charity For Foods</p>
-            </li>
-
-            <li class="tab-item">
-              <div class="item-icon">
-                <ion-icon name="checkmark-circle"></ion-icon>
-              </div>
-
-              <p class="tab-text">Charity For Education</p>
-            </li>
-
-            <li class="tab-item">
-              <div class="item-icon">
-                <ion-icon name="checkmark-circle"></ion-icon>
-              </div>
-
-              <p class="tab-text">Charity For Water</p>
-            </li>
-
-            <li class="tab-item">
-              <div class="item-icon">
-                <ion-icon name="checkmark-circle"></ion-icon>
-              </div>
-
-              <p class="tab-text">Charity For Medical</p>
-            </li>
-          </ul>
-
-          <button class="btn btn-secondary">
-            <span>Learn More Us</span>
-
-            <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-          </button>
-        </div>
+        <p class="text">
+          Tras años de desarrollo y con la llegada de nuevos colaboradores el
+          parque abrió al público en 2000, convirtiéndose en un referente
+          ornitológico.
+        </p>
+        <p class="text">
+          Hoy, Avifauna destaca por su compromiso con la educación ambiental,
+          colaborando con entidades locales y educativas, y recibe visitantes de
+          toda la península.
+        </p>
       </div>
+
+      <button class="btn btn-primary">
+        <span>Conoce la historia completa</span>
+        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+      </button>
+    </div>
+
+    <div class="img-container">
+      <img class="img" src="../assets/photos/DSC01286.JPG" alt="" />
     </div>
   </section>
 </template>
 
-<style scope>
-.about {
-  padding-block-start: 120px;
-}
+<script setup></script>
 
-.about-banner {
-  position: relative;
-  max-width: max-content;
-  margin-block-end: 30px;
-}
-
-.deco-title {
-  font-size: var(--fs-1);
-  font-weight: var(--fw-700);
-  white-space: nowrap;
-  line-height: 0.5;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 1px var(--light-gray);
-  transform-origin: top left;
-  transform: rotate(0.25turn);
-  position: absolute;
-  top: 55%;
-  left: 100%;
-  z-index: -1;
-}
-
-.deco-img {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  z-index: -1;
-}
-
-.about-img {
-  max-width: max-content;
-  margin-block-end: 30px;
-}
-
-.about .section-subtitle {
-  margin-block-end: 10px;
-}
-.w-100 {
-  width: 100%;
-}
-
-.about .section-subtitle {
-  margin-block-end: 10px;
-}
-
-.tab-nav {
+<style scoped>
+.section.about {
+  background-color: #2e2e2e;
+  width: 100vw;
+  padding: 0 0 0 2em;
   display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-block: 25px 35px;
+  justify-content: space-between;
 }
-.tab-btn {
-  background-color: var(--platinum);
-  color: var(--granite-gray);
-  font-size: var(--fs-8);
-  font-weight: var(--fw-500);
-  padding: 10px 32px;
+
+.txt-container,
+.img-container {
+  width: 58%;
+  /* padding-top: 3em; */
 }
-.tab-btn.active {
-  background-color: #87ceeb;
-  color: var(--white);
+
+.txt-container {
+  padding-top: 1em;
+  width: 42%;
+}
+h2.section-title {
+  color: #fff;
+  line-height: 1.3;
+  font-size: 2.5;
+  padding-top: .3em;
 }
 
 .section-text {
-  line-height: 2;
-}
-
-.tab-list {
-  margin-block: 25px 50px;
-}
-
-.tab-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding-block: 5px;
-}
-
-.tab-item .item-icon {
-  font-size: 3rem;
-  color: #87ceeb;
-}
-
-.tab-text {
-  color: var(--eerie-black-2);
+  line-height: 1.4;
+  color: #fff;
+  max-width: 89%;
+  padding-top: 0.5em;
+  font-family: "Inter", sans-serif;
   font-size: var(--fs-8);
-  font-weight: var(--fw-500);
+}
+.text {
+  padding-top: 0.3em;
 }
 
-@media (min-width: 992px) {
-  .banner-col {
-    width: 50%;
-  }
-
-  .about-img {
-    max-width: 100%;
-  }
-
-  .about-img-2 {
-    min-width: 120%;
-    margin-inline-start: -20%;
-  }
-
-  .about-img-3 {
-    max-width: 90%;
-  }
-
-  .about .container {
-    display: grid;
-    grid-template-columns: 1fr 0.8fr;
-    align-items: flex-start;
-    gap: 120px;
-  }
-
-  .about-banner {
-    margin-block-end: 0;
-  }
+.img {
+  width: 100%;
 }
-@media (min-width: 992px) {
-  .banner-col {
-    width: 50%;
-  }
-}
-@media (min-width: 768px) {
-  .banner-row {
-    display: flex;
-    gap: 20px;
-  }
-}
-@media (min-width: 1200px) {
-  .deco-img {
-    left: -35px;
-  }
+
+.btn.btn-primary {
+  margin-top: 2em;
+  cursor: pointer;
 }
 </style>

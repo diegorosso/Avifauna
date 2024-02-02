@@ -3,7 +3,7 @@
     <div class="container">
       <p class="section-subtitle">
         <img
-          src="../assets/imagenes/subtitle-img-white.png"
+          src="../assets/images/subtitle-img-white.png"
           width="32"
           height="7"
           alt="wavy line"
@@ -16,13 +16,13 @@
       </h2>
 
       <p class="hero-text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-        eveniet, laborum aliquam dicta debitis vero aspernatur similique unde
-        sint veniam quam earum, commodi explicabo optio asperiores error. Alias,
-        qui perspiciatis!
+        Al día de hoy Avifauna es uno de los parques ornitológicos con mayor
+        reconocimiento de la península, siendo visitado por un gran número de
+        personas anualmente. 
+       <strong> Esperamos encarecidamente que tú seas una de esas.</strong>
       </p>
       <button class="btn btn-primary">
-        <span>Comprar</span>
+        <span>Contactate con nosotros!</span>
         <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
       </button>
     </div>
@@ -40,7 +40,7 @@
 }
 
 .section-subtitle {
-  color: var(--color, #87ceeb);
+  color: var(--color, #82ad45);
   font-size: var(--fs, var(--fs-8));
   font-family: var(--ff, var(--ff-roboto));
   font-weight: var(--fw-600);
@@ -77,7 +77,7 @@
 }
 
 .hero-title {
-  font-size: var(--fs-2);
+  font-size: var(--fs-3);
   margin-block: 30px;
   line-height: 1.2;
 }
@@ -92,7 +92,7 @@
 
 .btn {
   position: relative;
-  background-color: var(--btn-bg, #87ceeb);
+  background-color: var(--btn-bg, #82ad45);
   color: var(--white);
   font-weight: var(--fw-600);
   padding: 12px 32px;
@@ -109,7 +109,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  border: 1px solid var(--btn-bg, #87ceeb);
+  border: 1px solid var(--btn-bg, #82ad45);
   transform: translate(5px, 5px);
   transition: var(--transition-2);
 }
@@ -122,7 +122,7 @@
 }
 
 .btn-secondary:is(:hover, :focus) {
-  --btn-bg: #87ceeb;
+  --btn-bg: #82ad45;
 }
 
 .btn-outline {
@@ -136,7 +136,9 @@
 
 @media (min-width: 992px) {
   .hero {
-    background-image: url("../assets/imagenes/blue-bird-6884633_1280.jpg");
+    background-image: url("../assets/photos/DSC01202.jpg");
+    /* background-image: url("../assets/photos/DSC00885.JPG"); */
+
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;

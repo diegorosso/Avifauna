@@ -4,7 +4,7 @@
       <li class="insta-post-item">
         <a href="#" class="insta-post-link">
           <img
-            src="../assets/imagenes/galeria-1.jpg"
+            src="../assets/images/galeria-1.jpg"
             width="320"
             height="300"
             loading="lazy"
@@ -19,7 +19,7 @@
       <li class="insta-post-item">
         <a href="#" class="insta-post-link">
           <img
-            src="../assets/imagenes/galeria-2.jpg"
+            src="../assets/images/galeria-2.jpg"
             width="320"
             height="300"
             loading="lazy"
@@ -34,7 +34,7 @@
       <li class="insta-post-item">
         <a href="#" class="insta-post-link">
           <img
-            src="../assets/imagenes/galeria-3.jpg"
+            src="../assets/images/galeria-3.jpg"
             width="320"
             height="300"
             loading="lazy"
@@ -49,7 +49,7 @@
       <li class="insta-post-item">
         <a href="#" class="insta-post-link">
           <img
-            src="../assets/imagenes/galeria-4.jpg"
+            src="../assets/images/galeria-4.jpg"
             width="320"
             height="300"
             loading="lazy"
@@ -64,7 +64,7 @@
       <li class="insta-post-item">
         <a href="#" class="insta-post-link">
           <img
-            src="../assets/imagenes/galeria-5.jpg"
+            src="../assets/images/galeria-5.jpg"
             width="320"
             height="300"
             loading="lazy"
@@ -90,6 +90,10 @@
   transition: var(--transition-2);
 }
 
+.insta-post-link {
+  display: inline;
+}
+
 .insta-post-link:is(:hover, :focus) > img {
   transform: scale(1.1);
   opacity: 0.5;
@@ -112,7 +116,7 @@
 
 .insta-post-list {
   display: flex;
-  overflow-x: auto;
+  overflow: hidden;
   scroll-snap-type: inline mandatory;
 }
 
