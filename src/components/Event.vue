@@ -88,6 +88,17 @@
   </section>
 </template>
 
+<script setup>
+  // Eventbrite API docs:
+  // https://www.eventbrite.com/platform/docs/introduction
+  // https://www.eventbrite.com/platform/ (OBTENER TOKEN)
+  // https://www.eventbrite.com/platform/docs/embedded-checkout    WIDGET PARA PAGO?
+  const eventBriteApiUrl = "https://www.eventbriteapi.com/v3/";
+  const ebOrganizationId = 1994755463673;
+  let token = "CC6QXTN2YRBDTKLWGYZL";
+
+</script>
+
 <style scoped>
 .event {
   padding-block-end: 1em;

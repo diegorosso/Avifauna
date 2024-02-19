@@ -1,4 +1,6 @@
 <script setup>
+import Tickets from "./components/Tickets.vue";
+
 import Header from "./components/Header.vue";
 import Home from "./components/Home.vue";
 import Feature from "./components/Feature.vue";
@@ -14,6 +16,7 @@ import Footer from "./components/Footer.vue"
 
 <template>
   <div>
+    <Tickets></Tickets>
     <Header></Header>
     <Home></Home>
     <Feature></Feature>

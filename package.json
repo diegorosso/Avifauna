@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vue-stripe/vue-stripe": "^4.5.0",
     "vue": "^3.3.11"
   },
   "devDependencies": {
