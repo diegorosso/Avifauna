@@ -9,6 +9,7 @@ import About from "./components/About.vue";
 // import Donated from "./components/Donated.vue";
 import Event from "./components/Event.vue"
 import Galeri from "./components/Galeri.vue"
+import Contact from "./components/Contact.vue";
 import Footer from "./components/Footer.vue"
 </script>
 
@@ -23,6 +24,7 @@ import Footer from "./components/Footer.vue"
     <Service></Service>
     <Donated></Donated>
     <Event></Event>
+    <Contact></Contact>
     <Galeri></Galeri>
     <Footer></Footer>
   </div>
