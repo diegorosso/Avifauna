@@ -9,6 +9,21 @@
         <li>
           <a href="https://www.instagram.com/avifaunalugo/" class="footer-link">Síguenos en Instagram</a>
         </li>
+
+        <!-- Nuevo elemento para Tramitación, gestión y administración -->
+        <li>
+          Tramitación, gestión y administración
+        </li>
+
+        <!-- Teléfono de las oficinas -->
+        <li>
+          Teléfono de las oficinas: 982 24 20 53
+        </li>
+
+        <!-- Teléfono del parque -->
+        <li>
+          Teléfono del parque: 686 37 51 70
+        </li>
       </ul>
     </div>
   </footer>

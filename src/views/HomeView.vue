@@ -6,6 +6,7 @@
     <Cta></Cta>
     <About></About>
     <Event></Event>
+    <Contact></Contact>
 </template>
 
 <script setup>
@@ -16,5 +17,5 @@ import Cta from "../components/Cta.vue";
 import About from "../components/About.vue";
 import AnimalsComponent from "../components/AnimalsComponent.vue";
 import Event from "../components/Event.vue"
-import Galeri from "../components/Galeri.vue"
+import Contact from "../components/Contact.vue"
 </script>
