@@ -1,7 +1,7 @@
 <template>
   <div
     class="header"
-    :class="{ activate: isActive }"
+    :class="{ activate: isActive || !isHomeRouteActive() }"
     data-header
     v-scroll="handleScroll"
   >
@@ -130,6 +130,9 @@ export default {
       const scrollY = window.scrollY;
       this.isActive = scrollY >= 50;
     },
+    isHomeRouteActive(){
+      return this.$route.path === '/'
+    }
   },
 };
 </script>
