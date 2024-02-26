@@ -3,7 +3,6 @@
     class="header"
     :class="{ activate: isActive || !isHomeRouteActive() }"
     data-header
-    v-scroll="handleScroll"
   >
     <div class="container">
       <h1>
