@@ -9,7 +9,7 @@ export default defineConfig({
     vue({
       template: {
         compilerOptions: {
-          isCustomElement: (tag) => tag.startsWith("ion-"),
+          isCustomElement: (tag) => tag.startsWith("ion-") || tag.startsWith("vue-final-modal"),
         },
       },
     }),

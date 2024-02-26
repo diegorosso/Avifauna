@@ -31,7 +31,7 @@
         </p>
       </div>
 
-      <button class="btn btn-primary">
+      <button class="btn btn-primary" @click="open">
         <span>Conoce la historia completa</span>
         <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
       </button>
@@ -43,7 +43,19 @@
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+import { useModal } from "vue-final-modal";
+import FullHistoryComponent from "./FullHistoryComponent.vue";
+
+const { open, close } = useModal({
+  component: FullHistoryComponent,
+  attrs: {
+    onBack() {
+      close();
+    },
+  },
+});
+</script>
 
 <style scoped>
 .section.about {
@@ -70,7 +82,7 @@ h2.section-title {
   color: #fff;
   line-height: 1.3;
   font-size: 2.5;
-  padding-top: .3em;
+  padding-top: 0.3em;
 }
 
 .section-text {
@@ -94,8 +106,8 @@ h2.section-title {
   cursor: pointer;
 }
 
-@media (min-width: 992px){
-  .display-none{
+@media (min-width: 992px) {
+  .display-none {
     display: inline;
   }
   .txt-container {

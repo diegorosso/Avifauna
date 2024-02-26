@@ -1,5 +1,5 @@
 <template>
-  <section class="section animals" id="animals">
+  <section class="section" id="animals">
     <p class="section-subtitle">
       <img
         src="../assets/images/subtitle-img-green.png"
@@ -267,9 +267,9 @@ const families = [
 </script>
 
 <style scoped>
-.animals {
+/* .animals {
   padding: 8em 3em;
-}
+} */
 
 .section-subtitle {
   margin-left: 0.5em;

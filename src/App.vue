@@ -3,6 +3,7 @@
     <Header></Header>
     <RouterView></RouterView>
     <Footer></Footer>
+    <ModalsContainer />
   </div>
 </template>
 
@@ -10,4 +11,6 @@
 import Header from "./components/Header.vue";
 import { RouterView } from 'vue-router'
 import Footer from "./components/Footer.vue"
+import { ModalsContainer } from 'vue-final-modal'
+
 </script>
