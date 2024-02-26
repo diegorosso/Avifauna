@@ -4,6 +4,7 @@
     :class="{ activate: isActive || !isHomeRouteActive() }"
     data-header
     v-scroll="handleScroll"
+    ref="header" 
   >
     <div class="container">
       <h1>
@@ -111,6 +112,7 @@ export default {
     return {
       isActive: false,
       isTransparent: true,
+      isTransformed: false, // Nueva propiedad para controlar la transformación
     };
   },
   mounted() {
@@ -122,17 +124,26 @@ export default {
   methods: {
     toggleNav() {
       this.isActive = !this.isActive;
+      this.isTransformed = this.isActive; // Actualiza isTransformed basado en el estado del menú
     },
     closeNav() {
       this.isActive = false;
+      this.isTransformed = false;
     },
     handleScroll() {
       const scrollY = window.scrollY;
-      this.isActive = scrollY >= 50;
+      // Verifica si el scroll es hacia abajo y si el menú no está activo
+      if (scrollY > 0 && !this.isActive) {
+        // Activa la clase .header.activate
+        this.$refs.header.classList.add("activate");
+      } else {
+        // Desactiva la clase .header.activate
+        this.$refs.header.classList.remove("activate");
+      }
     },
-    isHomeRouteActive(){
-      return this.$route.path === '/'
-    }
+    isHomeRouteActive() {
+      return this.$route.path === "/";
+    },
   },
 };
 </script>
