@@ -70,14 +70,12 @@ function select(index) {
 }
 
 function selectNext() {
-  if(selectedAnimalIndex.value < family.value.animals.length) selectedAnimalIndex.value++;
-  console.log(selectedAnimalIndex.value)
+  if(selectedAnimalIndex.value < family.value.animals.length - 1) selectedAnimalIndex.value++;
   selectedAnimal.value = family.value.animals[selectedAnimalIndex.value];
 }
 
 function selectBack() {
   if(selectedAnimalIndex.value > 0) selectedAnimalIndex.value--;
-  console.log(selectedAnimalIndex.value)
   selectedAnimal.value = family.value.animals[selectedAnimalIndex.value];
 }
 </script>
