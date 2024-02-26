@@ -19,7 +19,7 @@
         <header class="flex-column w-100">
           <div class="title">{{ family?.name }}</div>
           <div class="controls-container">
-            <div class="control" @click="selectBack(index)">
+            <div class="control" @click="selectBack()">
               <ion-icon name="chevron-back-outline"></ion-icon>
             </div>
             <div class="control" @click="selectNext()">
@@ -54,7 +54,6 @@
 
 <script setup>
 import { onMounted, ref } from "vue";
-import { RouterLink } from "vue-router";
 
 let family = ref({});
 let selectedAnimal = ref({});
@@ -71,12 +70,14 @@ function select(index) {
 }
 
 function selectNext() {
-  selectedAnimalIndex.value++;
+  if(selectedAnimalIndex.value < family.value.animals.length) selectedAnimalIndex.value++;
+  console.log(selectedAnimalIndex.value)
   selectedAnimal.value = family.value.animals[selectedAnimalIndex.value];
 }
 
 function selectBack() {
-  selectedAnimalIndex.value--;
+  if(selectedAnimalIndex.value > 0) selectedAnimalIndex.value--;
+  console.log(selectedAnimalIndex.value)
   selectedAnimal.value = family.value.animals[selectedAnimalIndex.value];
 }
 </script>

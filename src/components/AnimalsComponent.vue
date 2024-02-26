@@ -30,7 +30,6 @@
 
 <script setup>
 function goFamilyDetail(router, name, animals) {
-  console.log("jeje");
   localStorage.setItem("selectedFamily", JSON.stringify({ name, animals }));
 
   router.push({
