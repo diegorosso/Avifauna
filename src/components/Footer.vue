@@ -1,6 +1,6 @@
 <template>
-  <footer class="footer">
-    <div class="container">
+  <footer class="footer ">
+    <div class="container container-max">
       <ul class="footer-list">
         <li>
           <a href="https://www.facebook.com/avifauna.lugo" class="footer-link">Síguenos en Facebook</a>
@@ -30,6 +30,10 @@
 </template>
 
 <style>
+.container-max{
+  max-width: 2500px !important;
+}
+
 .footer {
   background-color: var(--raisin-black);
   color: var(--white);

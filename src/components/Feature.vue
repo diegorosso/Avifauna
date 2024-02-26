@@ -66,6 +66,7 @@
   /* gap: 30px; */
   display: flex;
   justify-content: space-around;
+  flex-direction: column;
 }
 
 .features-item {
@@ -94,9 +95,14 @@
   font-size: var(--fs-9);
 }
 
+
 @media (min-width: 992px) {
   .features {
     padding-block-start: var(--section-padding);
+  }
+
+  .features-list{
+    flex-direction: row;
   }
 }
 @media (min-width: 1200px) {
@@ -106,4 +112,8 @@
     background-color: transparent;
   }
 }
+
+
+
+
 </style>

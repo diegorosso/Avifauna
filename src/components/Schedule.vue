@@ -2,7 +2,7 @@
   <section class="section schedule" id="schedule">
     <div class="container">
       <div class="schedule-banner">
-        <h2 class="deco-title">Avifauna</h2>
+        <h2 class="deco-title display-none">Avifauna</h2>
 
         <img
           src="../assets/images/deco-img.png"
@@ -19,7 +19,7 @@
               height="380"
               loading="lazy"
               alt=""
-              class="schedule-img w-100"
+              class="schedule-img w-100 "
               src="../assets/photos/DSC01286.jpg"
             />
 
@@ -29,7 +29,7 @@
               height="250"
               loading="lazy"
               alt=""
-              class="schedule-img schedule-img-2 w-100"
+              class="schedule-img schedule-img-2 w-100 display-none"
             />
           </div>
 
@@ -40,7 +40,7 @@
               height="277"
               loading="lazy"
               alt=""
-              class="schedule-img schedule-img-3 w-100"
+              class="schedule-img schedule-img-3 w-100 display-none"
             />
 
             <img
@@ -48,7 +48,7 @@
               height="380"
               loading="lazy"
               alt=""
-              class="schedule-img w-100"
+              class="schedule-img w-100 display-none"
               src="../assets/photos/DSC00929.jpg"
             />
           </div>
@@ -293,6 +293,9 @@ function setTab(tab) {
   font-weight: var(--fw-400);
   max-width: 75%;
 }
+.display-none{
+  display: none;
+}
 
 span.yellow {
   display: inline;
@@ -305,6 +308,7 @@ span.yellow {
 }
 
 @media (min-width: 992px) {
+
   .banner-col {
     width: 50%;
   }
@@ -331,6 +335,9 @@ span.yellow {
 
   .schedule-banner {
     margin-block-end: 0;
+  }
+  .display-none{
+    display: inline;
   }
 }
 @media (min-width: 992px) {

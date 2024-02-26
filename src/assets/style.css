@@ -163,6 +163,13 @@ body {
   background-color: #82ad45;
 }
 
+input:-internal-autofill-previewed {
+  appearance: menulist-button;
+  background-image: none !important;
+  background-color: -internal-light-dark(transparent) !important;
+  color: fieldtext !important;
+}
+
 @media (min-width: 992px) {
 
   :root {
@@ -180,3 +187,4 @@ body {
 
   }
 }
+

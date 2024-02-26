@@ -39,6 +39,12 @@
           >
         </div>
         <div class="input-group">
+          <input class="input-style" type="text" id="entidad" required />
+          <label class="label-style" for="entidad">
+            <ion-icon class="padding" name="people-circle-sharp"></ion-icon> Entidad</label
+          >
+        </div>
+        <div class="input-group">
           <textarea
             class="textarea-style"
             id="message"
@@ -73,7 +79,7 @@
 }
 .form-style {
   width: 90%;
-  max-width: 40%;
+  max-width: 70%;
 }
 
 .input-group {
@@ -141,6 +147,15 @@
 .tittle-form {
   margin-bottom: 5rem;
   width: 100%;
-  max-width: 40%;
+  /* max-width: 40%; */
+  max-width: 70%;
+}
+@media (min-width: 992px){
+  .form-style{
+    max-width: 40%;
+  }
+  .tittle-form{
+    max-width: 40%;
+  }
 }
 </style>

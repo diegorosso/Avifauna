@@ -37,7 +37,7 @@
       </button>
     </div>
 
-    <div class="img-container">
+    <div class="img-container display-none">
       <img class="img" src="../assets/photos/DSC01286.jpg" alt="" />
     </div>
   </section>
@@ -62,7 +62,9 @@
 
 .txt-container {
   padding-top: 1em;
-  width: 42%;
+  /* width: 42%; */
+  width: 100%;
+  padding-bottom: 2em;
 }
 h2.section-title {
   color: #fff;
@@ -90,5 +92,14 @@ h2.section-title {
 .btn.btn-primary {
   margin-top: 2em;
   cursor: pointer;
+}
+
+@media (min-width: 992px){
+  .display-none{
+    display: inline;
+  }
+  .txt-container {
+    width: 42%;
+  }
 }
 </style>
