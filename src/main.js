@@ -1,7 +1,8 @@
 import './assets/style.css'
 import 'vue-final-modal/style.css'
-// import { vfmPlugin } from 'vue-final-modal'
 import { createVfm } from 'vue-final-modal'
+import { setupCalendar } from 'v-calendar';
+
 
 
 import { createApp } from 'vue'
@@ -10,7 +11,7 @@ import router from './router/index'
 
 const vfm = createVfm()
 const app = createApp(App)
-// app.use(vfmPlugin)
+app.use(setupCalendar, {})
 app.use(vfm)
 app.use(router)
 

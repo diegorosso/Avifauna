@@ -19,7 +19,7 @@
               height="380"
               loading="lazy"
               alt=""
-              class="schedule-img w-100 "
+              class="schedule-img w-100"
               src="../assets/photos/DSC01286.jpg"
             />
 
@@ -144,7 +144,7 @@
                 <ion-icon name="checkmark-circle"></ion-icon>
               </div>
               <p class="tab-text">
-                Menores de 4 años: <span class="yellow">gratis</span>
+                Menores de 4 años: <span class="yellow">GRATIS</span>
               </p>
             </li>
             <li class="tab-item">
@@ -174,6 +174,13 @@
               </p>
             </li>
           </ul>
+          <div>
+            <button @click="routeTickets($router)" class="btn btn-secondary">
+              <span>Compra tu entrada</span>
+
+              <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -186,9 +193,11 @@ import { ref } from "vue";
 let selectedTab = ref(1);
 
 function setTab(tab) {
-  console.log("dede");
   selectedTab.value = tab;
-  console.log(selectedTab);
+}
+
+function routeTickets(router){
+  router.push('/entradas')
 }
 </script>
 
@@ -293,7 +302,7 @@ function setTab(tab) {
   font-weight: var(--fw-400);
   max-width: 75%;
 }
-.display-none{
+.display-none {
   display: none;
 }
 
@@ -308,7 +317,6 @@ span.yellow {
 }
 
 @media (min-width: 992px) {
-
   .banner-col {
     width: 50%;
   }
@@ -336,7 +344,7 @@ span.yellow {
   .schedule-banner {
     margin-block-end: 0;
   }
-  .display-none{
+  .display-none {
     display: inline;
   }
 }

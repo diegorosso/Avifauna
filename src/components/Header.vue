@@ -96,7 +96,7 @@
       </nav>
 
       <div class="header-action">
-        <button class="btn btn-primary">
+        <button class="btn btn-primary" @click="routeTickets($router)">
           <span>Compra tu entrada</span>
 
           <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
@@ -122,6 +122,9 @@ export default {
     window.removeEventListener("scroll", this.handleScroll);
   },
   methods: {
+    routeTickets(router){
+      router.push('/entradas');
+    },
     toggleNav() {
       this.isActive = !this.isActive;
       this.isTransformed = this.isActive; // Actualiza isTransformed basado en el estado del menú

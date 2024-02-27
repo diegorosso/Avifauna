@@ -2,11 +2,6 @@
   <div v-if="family" class="container">
     <div class="flex-row">
       <aside class="aside flex-column">
-        <!-- <RouterLink to="/#animals">
-            <button class="btn btn-primary" >
-                Volver
-            </button>
-        </RouterLink> -->
         <div
           v-for="(animal, index) in family?.animals"
           v-bind:key="index"
