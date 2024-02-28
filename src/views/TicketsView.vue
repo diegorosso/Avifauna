@@ -395,7 +395,7 @@ function confirmPurchase() {
   padding-top: 0.5em;
 }
 .title {
-  font-size: var(--fs-5);
+  font-size: var(--fs-6) !important;
   padding-top: 0.3em;
   color: var(--eerie-black-2);
   display: flex;
