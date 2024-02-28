@@ -170,6 +170,28 @@ input:-internal-autofill-previewed {
   color: fieldtext !important;
 }
 
+.highlighted {
+  color: var(--bright-yellow-crayola);
+}
+
+/* VCalendar custom style */
+.vc-light.vc-attr, .vc-light .vc-attr {
+  --vc-content-color: var(--pistachio) !important;
+  --vc-highlight-outline-border: var(--pistachio) !important;
+  --vc-highlight-outline-content-color: var(--pistachio_50) !important;
+  --vc-highlight-light-content-color: var(--pistachio_50) !important;
+  --vc-highlight-solid-bg: var(--pistachio) !important;
+  --vc-dot-bg: var(--pistachio_50) !important;
+  --vc-bar-bg: var(--pistachio_50) !important;
+}
+.vc-light {
+  --vc-border: var(--pistachio) !important;
+  --vc-focus-ring: var(--pistachio) !important;
+}
+.vc-container{
+  box-shadow: var(--card-shadow) !important;
+}
+
 @media (min-width: 992px) {
 
   :root {

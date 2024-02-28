@@ -34,10 +34,10 @@
           <div class="card-title">Ficha técnica:</div>
           <div class="data-container">
             <p class="item">
-              <span class="highligted"> Nombre:</span> {{ selectedAnimal.name }}
+              <span class="highlighted"> Nombre:</span> {{ selectedAnimal.name }}
             </p>
             <p class="item">
-              <span class="highligted"> Nombre científico:</span>
+              <span class="highlighted"> Nombre científico:</span>
               {{ selectedAnimal.scientific }}
             </p>
           </div>
@@ -167,7 +167,7 @@ function selectBack() {
 .item {
   display: flex;
 }
-.highligted {
+.highlighted {
   margin-right: 0.5em;
   color: var(--bright-yellow-crayola);
 }

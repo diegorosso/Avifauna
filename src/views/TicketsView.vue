@@ -20,19 +20,30 @@
           <div
             class="control"
             @click="backStep()"
-            :class="{ disabled: selectedStep === 1 }"
+            :class="{ disabled: steps.step1.selected }"
           >
             <ion-icon name="chevron-back-outline"></ion-icon>
             Atrás
           </div>
-          <div class="control" @click="nextStep()">
+          <div
+            class="control"
+            @click="nextStep()"
+            :class="{
+              disabled:
+                (steps.step1.selected && !steps.step1.completed) ||
+                (steps.step2.selected && !steps.step2.completed) ||
+                (steps.step3.selected)
+                ,
+            }"
+          >
             Siguiente
             <ion-icon name="chevron-forward-outline"></ion-icon>
           </div>
         </div>
       </header>
+
       <!-- STEP 1 -->
-      <main v-if="selectedStep === 1" class="cards-container">
+      <main v-if="steps.step1.selected" class="cards-container">
         <div
           class="ticket-card"
           :class="{ selected: purchaseData.typeId === 1 }"
@@ -45,9 +56,12 @@
           </div>
           <div class="price">GRATIS</div>
           <div class="action-btn">
-            <button @click="selectTicket(1)" class="btn btn-primary">
+            <button
+              @click="selectTicket(1)"
+              class="btn btn-primary"
+              :class="{ disabled: purchaseData.typeId === 1 }"
+            >
               <span>Seleccionar</span>
-              <ion-icon name="card-outline"></ion-icon>
             </button>
           </div>
         </div>
@@ -63,9 +77,12 @@
           </div>
           <div class="price">7€</div>
           <div class="action-btn">
-            <button @click="selectTicket(2)" class="btn btn-primary">
+            <button
+              @click="selectTicket(2)"
+              class="btn btn-primary"
+              :class="{ disabled: purchaseData.typeId === 2 }"
+            >
               <span>Seleccionar</span>
-              <ion-icon name="card-outline"></ion-icon>
             </button>
           </div>
         </div>
@@ -81,9 +98,12 @@
           </div>
           <div class="price">10€</div>
           <div class="action-btn">
-            <button class="btn btn-primary" @click="selectTicket(3)">
+            <button
+              class="btn btn-primary"
+              @click="selectTicket(3)"
+              :class="{ disabled: purchaseData.typeId === 3 }"
+            >
               <span>Seleccionar</span>
-              <ion-icon name="card-outline"></ion-icon>
             </button>
           </div>
         </div>
@@ -102,7 +122,6 @@
                 @mouseenter="handleDescription"
                 @mouseleave="handleDescription"
               >
-                <ion-icon name="information-circle-outline"></ion-icon>
               </span>
             </h4>
             <ul v-if="showDescription" class="description">
@@ -114,17 +133,19 @@
           </div>
           <div class="price">8€</div>
           <div class="action-btn">
-            <button @click="selectTicket(4)" class="btn btn-primary">
+            <button
+              @click="selectTicket(4)"
+              class="btn btn-primary"
+              :class="{ disabled: purchaseData.typeId === 4 }"
+            >
               <span>Seleccionar</span>
-
-              <ion-icon name="card-outline"></ion-icon>
             </button>
           </div>
         </div>
       </main>
 
       <!-- Step 2 -->
-      <div class="step-2" v-if="selectedStep === 2">
+      <div class="step-2" v-if="steps.step2.selected">
         <div class="step-title">Seleccione una fecha para su visita:</div>
         <div class="datepicker-container">
           <DatePicker
@@ -133,8 +154,85 @@
             locale="es"
             borderless
             color="green"
+            :minDate="today"
+            :maxDate="maxDate"
           />
         </div>
+        <button
+          @click="confirmDate()"
+          class="btn btn-primary"
+          :class="{ disabled: !date }"
+        >
+          <span>Confirmar</span>
+        </button>
+      </div>
+
+      <div class="step-3" v-if="steps.step3.selected">
+        <div class="step-title">Detalle:</div>
+        <div class="detail-card ticket-card">
+          <div class="item">
+            <span class="highlighted">Nombre: </span>
+            {{ purchaseData.user.name }}
+          </div>
+          <div class="item">
+            <span class="highlighted">Apellido: </span>
+            {{ purchaseData.user.lastname }}
+          </div>
+          <span class="extra-info">*La entrada es intransferible.</span>
+          <div class="item">
+            <span class="highlighted">Email: </span>
+            {{ purchaseData.user.email }}
+          </div>
+          <div class="item">
+            <span v-if="purchaseData.user.phone" class="highlighted"
+              >Teléfono:
+            </span>
+            {{ purchaseData.user.phone }}
+          </div>
+          <div class="item">
+            <span class="highlighted">Fecha: </span>
+            {{ getFormattedDate(purchaseData.date) }}
+          </div>
+          <p class="extra-info">
+            *La entrada puede ser utilizada únicamente en esta fecha, durante el
+            horario en el que permanece abierto el establecimiento.
+          </p>
+          <div class="item flex-row">
+            <span class="highlighted">Entrada apta para </span>
+            <span v-if="purchaseData.typeId === 1"
+              >personas menores de 4 años</span
+            >
+            <span v-if="purchaseData.typeId === 2"
+              >personas entre 4 y 14 años</span
+            >
+            <span v-if="purchaseData.typeId === 3"
+              >personas mayores de 14 años</span
+            >
+            <span v-if="purchaseData.typeId === 4"
+              >personas mayores de 65 años / discapacitados / grupos de más de
+              15 personas</span
+            >
+          </div>
+          <span class="extra-info">*Acreditando identidad y condición.</span>
+          <div class="item">
+            <span class="highlighted">Total: </span>
+            <strong>{{
+              purchaseData.typeId === 1
+                ? "0€"
+                : purchaseData.typeId === 2
+                ? "7€"
+                : purchaseData.typeId === 3
+                ? "10€"
+                : purchaseData.typeId === 4
+                ? "8€"
+                : ""
+            }}</strong>
+          </div>
+        </div>
+        <button @click="confirmPurchase()" class="btn btn-primary">
+          <span>Comprar</span>
+          <ion-icon name="card-outline"></ion-icon>
+        </button>
       </div>
     </div>
   </div>
@@ -144,35 +242,90 @@
 import "v-calendar/style.css";
 import { DatePicker } from "v-calendar";
 import { ref } from "vue";
+import moment from "moment";
 
-let selectedStep = ref(1);
-let purchaseData = {
+let steps = ref({
+  step1: {
+    id: 1,
+    selected: true,
+    completed: false,
+  },
+  step2: {
+    id: 2,
+    selected: false,
+    completed: false,
+  },
+  step3: {
+    id: 3,
+    selected: false,
+    completed: false,
+  },
+});
+let purchaseData = ref({
   typeId: null,
-};
+  date: null,
+  user: {
+    name: null,
+    lastname: null,
+    email: null,
+    phone: null,
+  },
+});
 let showDescription = ref(false);
 
-let date: Date = new Date();
+let date = ref(null);
+const today = new Date();
+const maxDate = new Date().setFullYear(new Date().getFullYear() + 1);
+
+function getFormattedDate(date: Date) {
+  return moment(date).format("DD-MM-YYYY");
+}
 
 function handleDescription() {
   showDescription.value = !showDescription.value;
 }
 
 function selectTicket(id: number) {
-  // selectedStep.value = 2;
-  purchaseData.typeId = id;
+  purchaseData.value.typeId = id;
+  steps.value.step1.completed = true;
+  nextStep();
+}
+
+function confirmDate() {
+  purchaseData.value.date = date;
+  steps.value.step2.completed = true;
   nextStep();
 }
 
 function backStep() {
-  selectedStep.value--;
+  if (steps.value.step2.selected) {
+    steps.value.step2.selected = false;
+    steps.value.step1.selected = true;
+  }
+  if (steps.value.step3.selected) {
+    steps.value.step3.selected = false;
+    steps.value.step2.selected = true;
+  }
 }
 function nextStep() {
-  selectedStep.value++;
+  if (steps.value.step2.selected) {
+    steps.value.step2.selected = false;
+    steps.value.step3.selected = true;
+  }
+  if (steps.value.step1.selected) {
+    steps.value.step1.selected = false;
+    steps.value.step2.selected = true;
+  }
+  console.log(steps);
+}
+
+function confirmPurchase() {
+  steps.value.step3.completed = true;
 }
 </script>
 
 <style scoped>
-.disabled{
+.disabled {
   pointer-events: none;
   opacity: 0.6;
 }
@@ -231,7 +384,6 @@ function nextStep() {
 .selected {
   outline-color: var(--pistachio);
 }
-
 
 .icon-container {
   height: 24%;
@@ -293,29 +445,30 @@ function nextStep() {
 }
 
 /* Step 2 */
-.step-2 {
+.step-2,
+.step-3 {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.step-title{
+.step-title {
   font-size: var(--fs-7);
-  /* text-align: left; */
-  padding-bottom: 1em;
-  color: var(--pistachio);
-  font-size: 'inter', sans-serif;
+  font-weight: 300;
+  color: var(--eerie-black-2);
+  font-family: "inter", sans-serif;
 }
 .datepicker-container {
-  width: 40vw;
+  width: 50vw;
+  min-width: 600px;
+  padding-block: 2em;
 }
 
 .controls-container {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  /* padding-inline: 4vw; */
 }
 .control {
   display: flex;
@@ -324,5 +477,24 @@ function nextStep() {
 }
 .control > ion-icon {
   font-size: 40px;
+}
+
+/* Step 3 */
+.detail-card {
+  margin-block: 1.5em;
+  width: 60%;
+  height: auto;
+  align-items: flex-start;
+}
+.item {
+  display: flex;
+  padding-top: 0.5em;
+}
+.highlighted {
+  margin-right: 0.5em;
+}
+.extra-info {
+  text-align: left;
+  font-size: 14px;
 }
 </style>
