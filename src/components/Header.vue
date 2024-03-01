@@ -4,7 +4,7 @@
     :class="{ activate: isActive || !isHomeRouteActive() }"
     data-header
     v-scroll="handleScroll"
-    ref="header" 
+    ref="header"
   >
     <div class="container">
       <h1>
@@ -95,19 +95,26 @@
         </ul>
       </nav>
 
-      <div class="header-action">
+      <!-- <div class="header-action">
         <button class="btn btn-primary" @click="routeTickets($router)">
           <span>Compra tu entrada</span>
 
           <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
         </button>
-      </div>
+      </div> -->
+      <RegiondoComponent></RegiondoComponent>
     </div>
   </div>
 </template>
 
 <script>
+import RegiondoComponent from "./RegiondoComponent.vue";
+
 export default {
+  components: {
+    RegiondoComponent,
+    RegiondoComponent
+},
   data() {
     return {
       isActive: false,
@@ -122,8 +129,8 @@ export default {
     window.removeEventListener("scroll", this.handleScroll);
   },
   methods: {
-    routeTickets(router){
-      router.push('/entradas');
+    routeTickets(router) {
+      router.push("/entradas");
     },
     toggleNav() {
       this.isActive = !this.isActive;

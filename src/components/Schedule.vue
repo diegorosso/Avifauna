@@ -174,13 +174,13 @@
               </p>
             </li>
           </ul>
-          <div>
-            <button @click="routeTickets($router)" class="btn btn-secondary">
+          <!-- <div> -->
+            <!-- <button @click="routeTickets($router)" class="btn btn-secondary">
               <span>Compra tu entrada</span>
 
               <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-            </button>
-          </div>
+            </button> -->
+          <!-- </div> -->
         </div>
       </div>
     </div>
@@ -188,6 +188,7 @@
 </template>
 
 <script setup>
+import RegiondoComponent from "./RegiondoComponent.vue";
 import { ref } from "vue";
 
 let selectedTab = ref(1);
