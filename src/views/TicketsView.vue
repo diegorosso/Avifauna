@@ -32,8 +32,7 @@
               disabled:
                 (steps.step1.selected && !steps.step1.completed) ||
                 (steps.step2.selected && !steps.step2.completed) ||
-                (steps.step3.selected)
-                ,
+                steps.step3.selected,
             }"
           >
             Siguiente
@@ -167,6 +166,7 @@
         </button>
       </div>
 
+      <!-- Step 3 -->
       <div class="step-3" v-if="steps.step3.selected">
         <div class="step-title">Detalle:</div>
         <div class="detail-card ticket-card">
@@ -234,6 +234,11 @@
           <ion-icon name="card-outline"></ion-icon>
         </button>
       </div>
+
+      <!-- Step 4 -->
+      <div v-if="steps.step4.selected" class="step-4">
+        <RegiondoComponent></RegiondoComponent>
+      </div>
     </div>
   </div>
 </template>
@@ -243,6 +248,9 @@ import "v-calendar/style.css";
 import { DatePicker } from "v-calendar";
 import { ref } from "vue";
 import moment from "moment";
+import RegiondoComponent from "../components/RegiondoComponent.vue";
+
+
 
 let steps = ref({
   step1: {
@@ -257,6 +265,11 @@ let steps = ref({
   },
   step3: {
     id: 3,
+    selected: false,
+    completed: false,
+  },
+  step4: {
+    id: 4,
     selected: false,
     completed: false,
   },
@@ -308,6 +321,10 @@ function backStep() {
   }
 }
 function nextStep() {
+  if (steps.value.step3.selected) {
+    steps.value.step3.selected = false;
+    steps.value.step4.selected = true;
+  }
   if (steps.value.step2.selected) {
     steps.value.step2.selected = false;
     steps.value.step3.selected = true;
@@ -316,11 +333,11 @@ function nextStep() {
     steps.value.step1.selected = false;
     steps.value.step2.selected = true;
   }
-  console.log(steps);
 }
 
 function confirmPurchase() {
   steps.value.step3.completed = true;
+  nextStep();
 }
 </script>
 
