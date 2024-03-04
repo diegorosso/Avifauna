@@ -64,6 +64,7 @@
   </section>
 </template>
 
+
 <style scoped>
 .hero-conteiner {
   width: 100%;

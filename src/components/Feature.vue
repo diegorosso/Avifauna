@@ -67,11 +67,13 @@
   display: flex;
   justify-content: space-around;
   flex-direction: column;
+  padding-top: 3rem;
 }
 
 .features-item {
   display: flex;
   align-items: center;
+  padding-bottom: 3rem;
   /* gap: 25px; */
 }
 

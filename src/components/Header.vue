@@ -1,21 +1,25 @@
 <template>
   <div
     class="header"
-    :class="{ activate: isActive || !isHomeRouteActive() }"
+    :class="{ activate: isFamiliaRoute || isActive || !isHomeRouteActive() }"
     data-header
     v-scroll="handleScroll"
-    ref="header" 
+    ref="header"
   >
     <div class="container">
       <h1>
-        <a href="#" class="logo">Avifauna</a>
+        <a href="/" class="logo">Avifauna</a>
       </h1>
 
       <button class="nav-open-btn" aria-label="Open Menu" @click="toggleNav">
         <ion-icon name="menu-outline"></ion-icon>
       </button>
 
-      <nav class="navbar" :class="{ active: isActive }" data-navbar>
+      <nav
+        class="navbar"
+        :class="{ active: isActive, familia: isFamiliaRoute }"
+        data-navbar
+      >
         <button
           class="nav-close-btn"
           aria-label="Close Menu"
@@ -24,7 +28,7 @@
           <ion-icon name="close-outline"></ion-icon>
         </button>
 
-        <a href="#" class="logo">Avifauna</a>
+        <a href="/" class="logo">Avifauna</a>
 
         <ul class="navbar-list">
           <li>
@@ -83,7 +87,7 @@
           </li>
 
           <li>
-            <a href="#contact" class="navbar-link" @click="closeNav">
+            <a href="#Contact" class="navbar-link" @click="closeNav">
               <span>Contacto</span>
 
               <ion-icon
@@ -113,13 +117,20 @@ export default {
       isActive: false,
       isTransparent: true,
       isTransformed: false, // Nueva propiedad para controlar la transformación
+      activateHeader: false, // nueva propiedad para activar el header
     };
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
+
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.handleScroll);
+  },
+  computed: {
+    isFamiliaRoute() {
+      return this.$route.path === "/familia/";
+    },
   },
   methods: {
     toggleNav() {
@@ -149,6 +160,10 @@ export default {
 </script>
 
 <style>
+.navbar.familia {
+  background-color: var(--eerie-black-1);
+}
+
 .container {
   padding-inline: 15px;
 }

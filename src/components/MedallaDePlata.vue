@@ -37,4 +37,9 @@ import { VueFinalModal } from "vue-final-modal";
   width: 100%;
 
 }
+@media (max-width: 520px) {
+  .confirm-modal-content{
+    height: 40vh;
+  }
+}
 </style>
