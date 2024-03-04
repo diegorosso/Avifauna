@@ -15,14 +15,32 @@
         class="family"
         v-for="(family, index) in families"
         v-bind:key="index"
-        @click="goFamilyDetail($router, family.name, family.animals)"
       >
         <div class="img-container">
           <img :src="family.img" class="family-img" alt="" />
         </div>
-        <div class="card-title">{{ family.name }}</div>
-
-        <ion-icon name="expand-outline"></ion-icon>
+        <div class="card-container">
+          <div class="title">{{ family.name }}</div>
+          <div class="line"></div>
+          <div class="info">{{ family.description }}</div>
+          <div class="info">
+            <span class="blue">Hábitat:</span>
+            {{ family.habitat }}
+          </div>
+          <div class="info">
+            <span class="orange">Peligro de extinción:</span>
+            {{ family.extinction }}
+          </div>
+          <div class="btn-container">
+            <button
+              class="btn btn-secondary"
+              @click="goFamilyDetail($router, family.name, family.animals)"
+            >
+              Ver familia
+              <ion-icon class="padding" name="heart-outline"></ion-icon>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -39,23 +57,32 @@ function goFamilyDetail(router, name, animals) {
 
 const families = [
   {
-    name: "ÁGUILAS",
+    name: "Águilas",
     img: "/families/aguilas.jpg",
+    description:
+      "Majestuosas aves rapaces diurnas con picos y garras afiladas, vista excepcional y vuelo potente.",
+    habitat: "Bosques, montañas, praderas y zonas áridas.",
+    extinction:
+      "Algunas especies están en peligro por la caza y la pérdida de hábitat.",
     animals: [
       { name: "Aguila esteparia", scientific: "Aquila nipalensis" },
       { name: "Ratonero cola roja", scientific: "Buteo jamaicensis" },
       { name: "Águila imperial", scientific: "Aquila adalberti" },
       { name: "Halcón harris", scientific: "Parabuteo unicinctus" },
       { name: "Águila calzada", scientific: "Hieraaetus pennatus" },
-      { name: "Halcón harris", scientific: "Parabuteo unicinctus" },
       { name: "Aguilucho lagunero", scientific: "Circus aeruginosus" },
       { name: "Milano negro", scientific: "Milvus migrans" },
       { name: "Ratonero común", scientific: "Buteo buteo" },
     ],
   },
   {
-    name: "ANÁTIDAS",
+    name: "Anátidas",
     img: "/families/anatidas.jpg",
+    description:
+      "Aves acuáticas con patas palmeadas para nadar. Poseen un pico ancho y plano para filtrar agua y alimentarse",
+    habitat: "Lagos, ríos, estanques, humedales y zonas costeras.",
+    extinction:
+      "Algunas especies amenazadas por la pérdida de hábitat, la caza y la contaminación.",
     animals: [
       { name: "Tarro blanco", scientific: "Tadorna tadorna" },
       { name: "Pato peposaca", scientific: "Netta peposaca" },
@@ -98,13 +125,23 @@ const families = [
     ],
   },
   {
-    name: "AVEFRÍAS",
+    name: "Avefrías",
     img: "/families/avefrias.jpg",
+    description:
+      "Aves zancudas. Se alimentan de insectos, gusanos y crustáceos.",
+    habitat: "Praderas, campos agrícolas y zonas húmedas.",
+    extinction:
+      "Algunas especies amenazadas por la pérdida de hábitat y el uso de pesticidas.",
     animals: [{ name: "Avefria militar", scientific: "Vanellus miles" }],
   },
   {
-    name: "BÚHOS",
+    name: "Búhos",
     img: "/families/buhos.jpg",
+    description:
+      "Aves rapaces nocturnas con ojos grandes y sensibles a la luz. Poseen un oído muy fino y un vuelo silencioso.",
+    habitat: "Bosques, montañas, desiertos y praderas.",
+    extinction:
+      "Algunas especies amenazadas por la pérdida de hábitat, la caza y la superstición.",
     animals: [
       { name: "Búho bengali", scientific: "Bubo bengalensis" },
       { name: "Autillo cariblanco", scientific: "Ptilopsis leucotis" },
@@ -122,21 +159,36 @@ const families = [
     ],
   },
   {
-    name: "BUITRES",
+    name: "Buitres",
     img: "/families/buitres.jpg",
+    description:
+      "Aves carroñeras de gran tamaño y un fuerte sentido del olfato. Juegan un papel importante en el ecosistema al limpiar los restos de animales muertos.",
+    habitat: "Montañas, praderas y zonas áridas.",
+    extinction:
+      "Algunas especies amenazadas por la ingestión de plomo de animales cazados o la pérdida de hábitat.",
     animals: [{ name: "Buitre leonado", scientific: "Gyps fulvus" }],
   },
   {
-    name: "CIGÜEÑUELAS Y AVOCETAS",
+    name: "Cigüeñelas y Avocetas",
     img: "/families/avocetas.jpg",
+    description:
+      "Aves zancudas con pico largo y fino. Se alimentan de pequeños peces, crustáceos e insectos.",
+    habitat: "Zonas húmedas, lagunas, salinas y estuarios.",
+    extinction:
+      "Algunas especies amenazadas por la pérdida de hábitat y la contaminación.",
     animals: [
       { name: "Avoceta", scientific: "Recurvirostra avosetta" },
       { name: "Cigúeñela", scientific: "Himantopus himantopus" },
     ],
   },
   {
-    name: "FAISANES",
+    name: "Faisanes",
     img: "/families/faisanes.jpg",
+    description:
+      "Aves de tamaño mediano con plumaje colorido. Los machos son más coloridos que las hembras.",
+    habitat: "Bosques, montañas y praderas.",
+    extinction:
+      "Algunas especies amenazadas por la caza, la pérdida de hábitat y el comercio ilegal de mascotas.",
     animals: [
       { name: "Faisán monal", scientific: "Lophpohorus impejanus" },
       { name: "Tragopan satyr", scientific: "Tragopan satyra" },
@@ -166,38 +218,71 @@ const families = [
     ],
   },
   {
-    name: "FLAMENCOS",
+    name: "Flamencos",
     img: "/families/flamencos.jpg",
+    description:
+      "Aves acuáticas de gran tamaño con patas largas y pico curvado. Su plumaje es rosado o rojo debido a los pigmentos que obtienen de su dieta.",
+    habitat: "Lagos salobres y lagunas saladas",
+    extinction:
+      "Algunas especies amenazadas por la pérdida de hábitat y la extracción de agua.",
     animals: [{ name: "Flamenco comun", scientific: "Phoenicopterus ruber" }],
   },
   {
-    name: "GALLOS",
+    name: "Gallos",
     img: "/families/gallos.jpg",
+    description:
+      "Aves de tamaño mediano con plumaje colorido. Las hembras son más pequeñas y menos coloridas que los machos.",
+    habitat: "Zonas rurales y urbanas en todo el mundo.",
+    extinction: "",
     animals: [{ name: "Sedosa japonesa", scientific: "Gallus gallus dom." }],
   },
   {
-    name: "GARZAS",
+    name: "Garzas",
     img: "/families/garzas.jpg",
+    description: "Aves zancudas de tamaño mediano con pico largo y afilado.",
+    habitat: "Zonas húmedas, lagunas, ríos y manglares.",
+    extinction:
+      "Algunas especies amenazadas por la pérdida de hábitat y la contaminación.",
     animals: [
       { name: "Espátula común", scientific: "Platalea leucorodia" },
       { name: "Garcilla bueyera", scientific: "Bulbucus ibis" },
     ],
   },
   {
-    name: "IBIS",
+    name: "Ibis",
     img: "/families/ibis.jpg",
+    description:
+      "Aves acuáticas de tamaño mediano con pico largo y curvado. Su plumaje suele ser negro, blanco o rojo.",
+    habitat: "Zonas húmedas, lagunas, salinas y estuarios.",
+    extinction:
+      "Algunas especies amenazadas por la caza, la pérdida de su hábitat y el uso de pesticidas.",
     animals: [
       { name: "Ibis blanco", scientific: "Eudocimus albus" },
       { name: "Ibis rojo", scientific: "Eudocimus ruber" },
     ],
   },
   {
-    name: "LOROS",
+    name: "Loros",
     img: "/families/loros.jpg",
+    description:
+      "Aves de tamaño variable con plumaje colorido y pico curvado. Poseen gran inteligencia y capacidad de imitar sonidos.",
+    habitat: "Bosques tropicales y subtropicales en todo el mundo.",
+    extinction:
+      "Algunas especies están amenazadas por la pérdida de hábitat y el comercio ilegal de mascotas.",
     animals: [
       { name: "Inseparable fischer", scientific: "Agapornis fischeri" },
       { name: "Yaco de cola roja", scientific: "Psittacus erithacu" },
-      { name: "Loro ecléctico", scientific: "Eclectus roratus" },
+      {
+        name: "Loro ecléctico",
+        scientific: "Eclectus roratus",
+        img: "/animals/loro-eclectico.jpg",
+        description:
+          "Presenta un dimorfismo sexual pronunciado. Los machos tienen el pico color coral, un plumaje verde con plumas rojas y azules al nivel de las alas y de la cola. Las hembras tienen el pico negro, un plumaje rojo a nivel de la cabeza y de la cola, azul a nivel de pecho y de la nuca. Viven en parejas y pequeños grupos. Las bandadas se reúnen para comer fruta madura y pasar la noche en los árboles.",
+        biology: { feeding: "Frutos secos, frutas, bayas", size: "38-43cm", reproduction: "2-4 huevos" },
+        habitat: "Bosques de tierras bajas y en regiones más abiertas con árboles altos.",
+        distribution_area: "Islas Salomón, Nueva Guinea, nordeste de Australia y Las Molucas",
+        conservation_status: "",
+      },
       { name: "Amazona frentiazul", scientific: "Amazona aestiva" },
       { name: "Lorito senegales", scientific: "Poicephalus senegalus" },
       { name: "Amazona alinaranja", scientific: "Amazona amazonica" },
@@ -207,13 +292,23 @@ const families = [
     ],
   },
   {
-    name: "OSTRERO",
+    name: "Ostrero",
     img: "/families/ostrero.jpg",
+    description:
+      "Aves zancudas de tamaño mediano con pico largo, fuerte y recto. Se alimentan principalmente de moluscos.",
+    habitat: "Costas rocosas, playas arenosas y manglares en todo el mundo.",
+    extinction:
+      "Algunas especies están en peligro de extinción debido a la pérdida de hábitat, la contaminación y la sobreexplotación de moluscos.",
     animals: [{ name: "Ostrero común", scientific: "Haematopus ostralegus" }],
   },
   {
-    name: "PAVOS",
+    name: "Pavos",
     img: "/families/pavos.jpg",
+    description:
+      "Aves de tamaño mediano a grande con plumaje colorido. Los machos son más grandes y coloridos que las hembras.",
+    habitat: "Bosques, praderas y zonas rurales.",
+    extinction:
+      "Algunas especies están en peligro de extinción debido a la pérdida de hábitat y la caza.",
     animals: [
       { name: "Pavón copete de piedra", scientific: "Pauxi pauxi" },
       { name: "Pavo real común", scientific: "Pavo cristatus" },
@@ -226,8 +321,13 @@ const families = [
     ],
   },
   {
-    name: "PERDICES Y CODORNICES",
+    name: "Perdices y Codornices",
     img: "/families/codornices.jpg",
+    description:
+      "Aves terrestres de tamaño pequeño a mediano. Las perdices son más grandes y robustas que las codornices.",
+    habitat: "Praderas, bosques abiertos y matorrales en todo el mundo.",
+    extinction:
+      "Algunas especies están en peligro de extinción debido a la pérdida de hábitat, la intensificación agrícola y la caza.",
     animals: [
       { name: "Perdíz pardilla", scientific: "Perdix perdix" },
       { name: "Codorniz común", scientific: "Coturnix coturnix" },
@@ -235,8 +335,13 @@ const families = [
     ],
   },
   {
-    name: "RATITES",
+    name: "Ratites",
     img: "/families/ratites.jpg",
+    description:
+      "Aves no voladoras de gran tamaño. Poseen alas vestigiales y patas fuertes.",
+    habitat: "Sabanas, praderas y zonas semiáridas.",
+    extinction:
+      "Varias especies extintas, como el moa de Nueva Zelanda. El kiwi de Nueva Zelanda está en peligro de extinción.",
     animals: [
       { name: "Avestruz africana", scientific: "Sthrutio camelus" },
       { name: "Casuario común", scientific: "Casuarius casuarius" },
@@ -245,13 +350,22 @@ const families = [
     ],
   },
   {
-    name: "TÓRTOLAS",
+    name: "Tórtolas",
     img: "/families/tortolas.jpg",
+    description: "Aves pequeñas y esbeltas con plumaje marrón o gris.",
+    habitat: "Bosques, praderas, zonas urbanas y jardines en todo el mundo.",
+    extinction:
+      "Algunas especies en peligro de extinción debido a la pérdida de hábitat y la caza.",
     animals: [{ name: "Tortola diamante", scientific: "Geopelia cuneata" }],
   },
   {
-    name: "TURACOS",
+    name: "Turacos",
     img: "/families/turacos.jpg",
+    description:
+      "Aves africanas de tamaño mediano con plumaje colorido. Poseen un pico fuerte y un copete eréctil.",
+    habitat: "Bosques tropicales y subtropicales.",
+    extinction:
+      "Algunas especies están en peligro de extinción debido a la pérdida de hábitat y la caza.",
     animals: [
       { name: "Turaco crestiblanco", scientific: "Tauraco leucolophus" },
       { name: "Turaco violáceo", scientific: "Musophaga violacea" },
@@ -259,18 +373,19 @@ const families = [
     ],
   },
   {
-    name: "URUGALLO",
+    name: "Urugallo",
     img: "/families/urogallos.jpg",
+    description:
+      "Aves de gran tamaño que habitan en bosques boreales. Poseen un plumaje críptico y presentan dimorfismo sexual.",
+    habitat: "Bosques boreales de coníferas en Eurasia y Norteamérica.",
+    extinction:
+      "Especies vulnerables debido a la pérdida de hábitat, la caza y la depredación.",
     animals: [{ name: "Urogallo", scientific: "Tetrao urugallus" }],
   },
 ];
 </script>
 
 <style scoped>
-/* .animals {
-  padding: 8em 3em;
-} */
-
 .section-subtitle {
   margin-left: 0.5em;
   padding-bottom: 2em;
@@ -287,54 +402,70 @@ const families = [
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 28vw;
+  width: 45vw;
   min-width: 400px;
-  background-color: #212121;
   color: #fff;
   margin-block: 2em;
-  border-radius: 8px;
-  cursor: pointer;
   position: relative;
+  padding-inline-end: 120px;
+  padding-block-end: 120px;
 }
-.family {
-  transition: var(--transition-2);
-}
-
-.family:is(:hover, :focus) > .img-container > img {
-  opacity: 0.5;
-}
-.family:is(:hover, :focus) {
-  transform: scale(1.05);
-}
-
-.family > ion-icon {
-  color: var(--white);
-  font-size: 3rem;
+.card-container {
+  width: 75%;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: var(--transition-2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fff;
+  padding: 1em;
+  bottom: 0;
+  right: 0;
+  opacity: 0.92;
+  height: 350px;
+  border-radius: 4px;
+  box-shadow: var(--card-shadow);
+}
+.title {
+  font-size: var(--fs-5);
+  color: #262626;
+  font-weight: var(--fw-700);
+}
+.line {
+  min-height: 4px;
+  width: 100%;
+  background-color: var(--pistachio);
+  border-radius: 18px;
+  margin-bottom: 0.3em;
+}
+.info {
+  font-size: var(--fs-10);
+  color: #787878;
+  display: flex;
+  flex-wrap: wrap;
+  padding-block: 0.3em;
+}
+.info > span {
+  margin-right: 0.5em;
+  font-weight: var(--fw-500);
+}
+.orange {
+  color: var(--bright-yellow-crayola);
+}
+.blue {
+  color: #64c9bb;
 }
 
-.family:is(:hover, :focus) > ion-icon {
-  opacity: 1;
-}
-.card-title {
-  font-size: var(--fs-4);
-  letter-spacing: 0.2rem;
+.btn-container {
+  width: 100%;
+  padding-block: 0.5em;
 }
 
 .img-container {
-  width: 28vw;
-  max-width: 455px;
-  height: 303px;
+  height: 400px;
   min-width: 400px;
 }
 
 .family-img {
-  border-radius: 8px 8px 0 0;
   object-fit: cover;
   object-position: top;
   height: 100%;

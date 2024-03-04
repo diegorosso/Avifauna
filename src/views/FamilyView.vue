@@ -1,7 +1,7 @@
 <template>
 
   <div v-if="family" class="container">
-    <div class="flex-row">
+    <div class="flex-row space-between">
       <aside class="aside flex-column">
         <div
           v-for="(animal, index) in family?.animals"
@@ -13,35 +13,80 @@
       </aside>
       <main class="main">
         <header class="flex-column w-100">
-          <div class="title">{{ family?.name }}</div>
           <div class="controls-container">
             <div class="control" @click="selectBack()">
               <ion-icon name="chevron-back-outline"></ion-icon>
             </div>
+            <div class="title">{{ family?.name }}</div>
             <div class="control" @click="selectNext()">
               <ion-icon name="chevron-forward-outline"></ion-icon>
             </div>
           </div>
         </header>
         <div class="card-container">
-          <div class="img-container">
-            <img
-              :src="
-                selectedAnimal.img ? selectedAnimal.img : '/icons/no-photo.png'
-              "
-              alt=""
-            />
-          </div>
-          <div class="card-title">Ficha técnica:</div>
-          <div class="data-container">
+          <div class="card-header flex-row flex-wrap space-between align-center">
+            <div>
+              <div class="card-title">{{ selectedAnimal.name }}</div>
+              <div class="card-subtitle">{{ selectedAnimal.scientific }}</div>
+              
+              <div class="data-container">
             <p class="item">
-              <span class="highlighted"> Nombre:</span> {{ selectedAnimal.name }}
+              <span class="highlighted"> Alimentación:</span>
+              {{
+                selectedAnimal.biology?.feeding
+                  ? selectedAnimal.biology.feeding
+                  : "-"
+              }}
             </p>
             <p class="item">
-              <span class="highlighted"> Nombre científico:</span>
-              {{ selectedAnimal.scientific }}
+              <span class="highlighted"> Tamaño:</span>
+              {{
+                selectedAnimal.biology?.size ? selectedAnimal.biology.size : "-"
+              }}
+            </p>
+            <p class="item">
+              <span class="highlighted"> Reproducción:</span>
+              {{
+                selectedAnimal.biology?.reproduction
+                  ? selectedAnimal.biology.reproduction
+                  : "-"
+              }}
+            </p>
+
+            <p class="item">
+              <span class="highlighted"> Hábitat:</span>
+              {{ selectedAnimal.habitat ? selectedAnimal.habitat : "-" }}
+            </p>
+            <p class="item">
+              <span class="highlighted"> Estado de conservación:</span>
+              {{
+                selectedAnimal.conservation_status
+                  ? selectedAnimal.conservation_status
+                  : "-"
+              }}
             </p>
           </div>
+
+            </div>
+            <div
+              class="img-container"
+              :class="{ 'no-img': !selectedAnimal.img }"
+            >
+              <img
+                :src="
+                  selectedAnimal.img
+                    ? selectedAnimal.img
+                    : '/icons/no-photo.png'
+                "
+                :class="{ 'no-img': !selectedAnimal.img }"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="description">
+            {{ selectedAnimal.description }}
+          </div>
+        
         </div>
       </main>
     </div>
@@ -68,12 +113,13 @@ function select(index) {
 }
 
 function selectNext() {
-  if(selectedAnimalIndex.value < family.value.animals.length - 1) selectedAnimalIndex.value++;
+  if (selectedAnimalIndex.value < family.value.animals.length - 1)
+    selectedAnimalIndex.value++;
   selectedAnimal.value = family.value.animals[selectedAnimalIndex.value];
 }
 
 function selectBack() {
-  if(selectedAnimalIndex.value > 0) selectedAnimalIndex.value--;
+  if (selectedAnimalIndex.value > 0) selectedAnimalIndex.value--;
   selectedAnimal.value = family.value.animals[selectedAnimalIndex.value];
 }
 </script>
@@ -83,7 +129,7 @@ function selectBack() {
   width: 100%;
 }
 .container {
-  padding-top: 150px;
+  padding-top: 130px;
   padding-inline: 0;
 }
 
@@ -117,7 +163,21 @@ function selectBack() {
 
 .flex-row {
   display: flex;
+}
+.flex-wrap{
+  flex-wrap: wrap;
+}
+.align-center {
+  align-items: center;
+}
+.center {
+  justify-content: center;
+}
+.space-between {
   justify-content: space-between;
+}
+.space-around {
+  justify-content: space-around;
 }
 
 .main {
@@ -145,34 +205,71 @@ function selectBack() {
 .card-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding-block: 5vh 0.5em;
+  padding-block: 7vh 0.5em;
   font-size: var(--fs-8);
+  width: 100%;
+}
+.card-header {
+  width: 85%;
+  padding-block: 2em;
 }
 .card-title {
   color: #82ad45;
   font-weight: 600;
-  font-size: var(--fs-7);
+  font-size: var(--fs-5);
+}
+.card-subtitle {
+  font-weight: var(--fw-300);
 }
 
 .img-container {
-  max-width: 300px;
-  width: 200px;
-  height: 250px;
+  border-radius: 8px;
+  width: 300px;
+  height: 350px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.img-container.no-img {
+  max-width: 300px;
+  width: 150px;
+  height: 200px;
+  margin-right: 4em;
+}
 .img-container > img {
+  border-radius: 8px;
+  width: 300px;
+  height: 350px;
+  object-fit: cover;
+  object-position: top;
+}
+.img-container > img.no-img {
   width: 100%;
+  height: auto;
+}
+.description {
+  font-size: var(--fs-9);
+  padding-block: 0.5em;
+  max-width: 85%;
+  font-weight: var(--fw-300);
+}
+
+.data-container {
+  width: 95%;
+  padding-block: 1em;
 }
 .item {
   display: flex;
+  flex-wrap: wrap;
+  color: #616161;
+  font-weight: var(--fw-300);
+  font-size: var(--fs-9);
 }
 .highlighted {
   margin-right: 0.5em;
   color: var(--bright-yellow-crayola);
+  font-weight: var(--fw-400);
 }
 @media only screen and (max-width: 768px) {
   .aside {
