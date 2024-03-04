@@ -1,9 +1,8 @@
 <template>
   <div
     class="header"
-    :class="{ activate: isFamiliaRoute || isActive || !isHomeRouteActive() }"
+    :class="{ activate: (isActive && isHomeRouteActive()) || !isHomeRouteActive() }"
     data-header
-    v-scroll="handleScroll"
     ref="header"
   >
     <div class="container">
@@ -17,7 +16,7 @@
 
       <nav
         class="navbar"
-        :class="{ active: isActive, familia: isFamiliaRoute }"
+        :class="{ active: isActive, familia: !isHomeRouteActive() }"
         data-navbar
       >
         <button
@@ -98,14 +97,6 @@
           </li>
         </ul>
       </nav>
-
-      <!-- <div class="header-action">
-        <button class="btn btn-primary" @click="routeTickets($router)">
-          <span>Compra tu entrada</span>
-
-          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-        </button>
-      </div> -->
       <RegiondoComponent></RegiondoComponent>
     </div>
   </div>
@@ -134,11 +125,6 @@ export default {
   beforeDestroy() {
     window.removeEventListener("scroll", this.handleScroll);
   },
-  computed: {
-    isFamiliaRoute() {
-      return this.$route.path === "/familia/";
-    },
-  },
   methods: {
     routeTickets(router) {
       router.push("/entradas");
@@ -158,8 +144,10 @@ export default {
         // Activa la clase .header.activate
         this.$refs.header.classList.add("activate");
       } else {
-        // Desactiva la clase .header.activate
-        this.$refs.header.classList.remove("activate");
+        if(this.isHomeRouteActive()){
+          // Desactiva la clase .header.activate
+          this.$refs.header.classList.remove("activate");
+        }
       }
     },
     isHomeRouteActive() {

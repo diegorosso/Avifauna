@@ -96,6 +96,7 @@
 <script setup>
 import { onMounted, ref } from "vue";
 
+window.scrollTo(0,0);
 
 let family = ref({});
 let selectedAnimal = ref({});
