@@ -19,12 +19,16 @@
         />
       </p>
 
-      <h3 class="h2 section-title">
+      <!-- <h3 class="h2 section-title">
         Aquí encontrarás la información de todas las actividades que realizamos
         en el parque
+      </h3> -->
+
+      <h3 class="h2 section-title" style="padding-block: 2em">
+        Próximamente entérate de nuestros eventos y activdades...
       </h3>
 
-      <ul class="event-list">
+      <!-- <ul class="event-list">
         <li>
           <div class="event-card">
             <time class="card-time" datetime="01-05">
@@ -83,7 +87,7 @@
             </div>
           </div>
         </li>
-      </ul>
+      </ul> -->
     </div>
   </section>
 </template>
@@ -102,11 +106,11 @@
   padding-bottom: 0.7em;
 }
 
-.section-title{
+.section-title {
   max-width: 70%;
 }
 
-.container{
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;

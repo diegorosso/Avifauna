@@ -174,13 +174,6 @@
               </p>
             </li>
           </ul>
-          <!-- <div> -->
-            <!-- <button @click="routeTickets($router)" class="btn btn-secondary">
-              <span>Compra tu entrada</span>
-
-              <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-            </button> -->
-          <!-- </div> -->
         </div>
       </div>
     </div>
@@ -188,17 +181,12 @@
 </template>
 
 <script setup>
-import RegiondoComponent from "./RegiondoComponent.vue";
 import { ref } from "vue";
 
 let selectedTab = ref(1);
 
 function setTab(tab) {
   selectedTab.value = tab;
-}
-
-function routeTickets(router){
-  router.push('/entradas')
 }
 </script>
 

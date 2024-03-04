@@ -5,15 +5,10 @@
         <li class="features-item">
           <div class="item-icon">
             <ion-icon name="earth-outline"></ion-icon>
-            <!-- <ion-icon name="heart-outline"></ion-icon> -->
           </div>
 
           <div>
             <h3 class="h4 item-title">95% de animales irrecuperables</h3>
-
-            <!-- <p class="item-text">
-              Sit amet consecte adiscine eiusm temor ultrices.
-            </p> -->
           </div>
         </li>
 
@@ -62,8 +57,6 @@
 }
 
 .features-list {
-  /* display: grid; */
-  /* gap: 30px; */
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -74,13 +67,12 @@
   display: flex;
   align-items: center;
   padding-bottom: 3rem;
-  /* gap: 25px; */
 }
 
 .features-item .item-icon {
   color: #82ad45;
   font-size: 5.5rem;
-  margin-right: .1em;
+  margin-right: 0.1em;
 }
 
 .features-item .item-icon ion-icon {
@@ -97,13 +89,12 @@
   font-size: var(--fs-9);
 }
 
-
 @media (min-width: 992px) {
   .features {
     padding-block-start: var(--section-padding);
   }
 
-  .features-list{
+  .features-list {
     flex-direction: row;
   }
 }
@@ -114,8 +105,4 @@
     background-color: transparent;
   }
 }
-
-
-
-
 </style>

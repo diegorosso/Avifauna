@@ -24,13 +24,13 @@
           <div class="line"></div>
           <div class="info">{{ family.description }}</div>
           <div class="info">
-            <span class="blue">Hábitat:</span>
+            <span class="orange">Hábitat:</span>
             {{ family.habitat }}
           </div>
-          <div class="info">
+          <!-- <div class="info">
             <span class="orange">Peligro de extinción:</span>
             {{ family.extinction }}
-          </div>
+          </div> -->
           <div class="btn-container">
             <button
               class="btn btn-secondary"
@@ -417,11 +417,12 @@ const families = [
   flex-direction: column;
   justify-content: space-between;
   background: #fff;
-  padding: 1em;
+  padding-block: 1.2em;
+  padding-inline: 2em;
   bottom: 0;
   right: 0;
-  opacity: 0.92;
-  height: 350px;
+  opacity: 0.93;
+  height: 270px;
   border-radius: 4px;
   box-shadow: var(--card-shadow);
 }
@@ -461,6 +462,7 @@ const families = [
 }
 
 .img-container {
+  width: 100%;
   height: 400px;
   min-width: 400px;
 }
