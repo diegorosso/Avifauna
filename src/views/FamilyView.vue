@@ -1,4 +1,5 @@
 <template>
+
   <div v-if="family" class="container">
     <div class="flex-row">
       <aside class="aside flex-column">
@@ -50,6 +51,7 @@
 <script setup>
 import { onMounted, ref } from "vue";
 
+
 let family = ref({});
 let selectedAnimal = ref({});
 let selectedAnimalIndex = ref(0);
@@ -57,6 +59,7 @@ let selectedAnimalIndex = ref(0);
 onMounted(() => {
   family.value = JSON.parse(localStorage.getItem("selectedFamily"));
   selectedAnimal.value = family.value?.animals[0];
+  
 });
 
 function select(index) {
@@ -122,7 +125,7 @@ function selectBack() {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 10vh;
+  padding-bottom: 18vh;
 }
 
 .controls-container {
@@ -170,5 +173,10 @@ function selectBack() {
 .highlighted {
   margin-right: 0.5em;
   color: var(--bright-yellow-crayola);
+}
+@media only screen and (max-width: 768px) {
+  .aside {
+    display: none;
+  }
 }
 </style>
