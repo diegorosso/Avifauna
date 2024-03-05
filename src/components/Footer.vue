@@ -78,7 +78,7 @@
   </footer>
 </template>
 
-<style>
+<style scoped>
 header {
   text-align: center;
   padding-top: 100px;
