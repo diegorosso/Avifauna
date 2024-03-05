@@ -17,14 +17,26 @@
       <form class="form-style">
         <div class="row">
           <div class="input-group">
-            <input class="input-style" type="text" id="name" required />
+            <input
+              class="input-style"
+              type="text"
+              id="name"
+              required
+              v-model="formData.name"
+            />
             <label class="label-style" for="name">
               <ion-icon class="padding" name="person-sharp"></ion-icon>
               Nombre</label
             >
           </div>
           <div class="input-group">
-            <input class="input-style" type="text" id="number" required />
+            <input
+              class="input-style"
+              type="number"
+              id="number"
+              required
+              v-model="formData.phone"
+            />
             <label class="label-style" for="number">
               <ion-icon class="padding" name="call-sharp"></ion-icon>
               Teléfono</label
@@ -33,15 +45,28 @@
         </div>
 
         <div class="input-group">
-          <input class="input-style" type="text" id="email" required />
+          <input
+            class="input-style"
+            type="text"
+            id="email"
+            required
+            v-model="formData.email"
+          />
           <label class="label-style" for="email">
             <ion-icon class="padding" name="mail-sharp"></ion-icon> Email</label
           >
         </div>
         <div class="input-group">
-          <input class="input-style" type="text" id="entidad" required />
-          <label class="label-style" for="entidad">
-            <ion-icon class="padding" name="people-circle-sharp"></ion-icon> Entidad</label
+          <input
+            class="input-style"
+            type="text"
+            id="entity"
+            required
+            v-model="formData.entity"
+          />
+          <label class="label-style" for="entity">
+            <ion-icon class="padding" name="people-circle-sharp"></ion-icon>
+            Entidad</label
           >
         </div>
         <div class="input-group">
@@ -50,13 +75,14 @@
             id="message"
             rows="8"
             required
+            v-model="formData.message"
           ></textarea>
           <label class="label-style" for="message"
             ><ion-icon class="padding" name="chatbubbles-sharp"></ion-icon>
             Mensaje</label
           >
         </div>
-        <button class="btn win" type="submit">
+        <button class="btn win" type="button" @click="sendEmail()">
           <ion-icon class="padding" name="paper-plane-sharp"></ion-icon>Enviar
         </button>
       </form>
@@ -64,6 +90,40 @@
   </section>
 </template>
 
+<script setup>
+import axios from "axios";
+import { ref } from "vue";
+
+const formData = ref({
+  name: "",
+  phone: "",
+  email: "",
+  entity: "",
+  message: "",
+});
+
+async function sendEmail() {
+  let data = {
+    service_id: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+    template_id: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+    user_id: import.meta.env.VITE_EMAILJS_USER_ID,
+    accessToken: import.meta.env.VITE_EMAILJS_ACCESS_TOKEN,
+    template_params: formData.value,
+  };
+  
+  try {
+    const url = "https://api.emailjs.com/api/v1.0/email/send";
+    await axios.post(url, JSON.stringify(data), {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    console.log("Mando");
+  } catch (error) {
+    console.log({ error });
+  }
+}
+</script>
 
 <style scoped>
 .hero-conteiner {
@@ -151,11 +211,11 @@
   /* max-width: 40%; */
   max-width: 70%;
 }
-@media (min-width: 992px){
-  .form-style{
+@media (min-width: 992px) {
+  .form-style {
     max-width: 40%;
   }
-  .tittle-form{
+  .tittle-form {
     max-width: 40%;
   }
 }

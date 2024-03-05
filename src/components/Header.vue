@@ -113,11 +113,9 @@
 
 <script>
 import RegiondoComponent from "./RegiondoComponent.vue";
-
 export default {
   components: {
     RegiondoComponent,
-    RegiondoComponent
 },
   data() {
     return {
