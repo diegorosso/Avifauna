@@ -342,10 +342,6 @@ function confirmPurchase() {
 </script>
 
 <style scoped>
-.disabled {
-  pointer-events: none;
-  opacity: 0.6;
-}
 .wrapper {
   width: 100vw;
   background-image: url(../assets/images/background.png);

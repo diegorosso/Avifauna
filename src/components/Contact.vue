@@ -14,7 +14,7 @@
         <h2 class="h2 section-title">Conéctate con Nosotros</h2>
       </div>
 
-      <form class="form-style">
+      <form class="form-style" @submit.prevent="sendEmail">
         <div class="row">
           <div class="input-group">
             <input
@@ -47,7 +47,7 @@
         <div class="input-group">
           <input
             class="input-style"
-            type="text"
+            type="email"
             id="email"
             required
             v-model="formData.email"
@@ -87,8 +87,11 @@
           <input type="checkbox" v-model="formData.guidedVisit" />
           <span class="checkmark"></span>
         </label>
-        <button class="btn win" type="button" @click="sendEmail()">
-          <ion-icon class="padding" name="paper-plane-sharp"></ion-icon>Enviar
+        <button class="btn win" type="submit" :class="{disabled: !isValidForm()}">
+          <span v-if="!showSpinner">
+            <ion-icon class="padding" name="paper-plane-sharp"></ion-icon>Enviar
+          </span>
+          <VueSpinner v-if="showSpinner" size="30" color="#fff" />
         </button>
       </form>
     </div>
@@ -98,20 +101,14 @@
 <script setup>
 import axios from "axios";
 import { ref, watch } from "vue";
+import { VueSpinner } from "vue3-spinners";
+import { useModal } from "vue-final-modal";
+import SimpleModalInfo from "./SimpleModalInfo.vue";
+
+let showSpinner = ref(false);
 
 const props = defineProps(["guidedVisit"]);
 const guidedVisit = ref(props.guidedVisit);
-
-watch(
-  () => props.guidedVisit,
-  (newValue, oldValue) => {
-    guidedVisit.value = newValue;
-
-    if(guidedVisit.value){
-      formData.value.guidedVisit = true;
-    }
-  }
-);
 
 const formData = ref({
   name: "",
@@ -122,7 +119,40 @@ const formData = ref({
   guidedVisit: false,
 });
 
+const isValidForm = () => {
+  const { name, phone, email, entity, message } = formData.value;
+  if (name === '' || phone === ''  || !email.includes('@') || entity === '' || message === '' ) return false
+  return true
+};
+
+watch(
+  () => props.guidedVisit,
+  (newValue, oldValue) => {
+    guidedVisit.value = newValue;
+
+    if (guidedVisit.value) {
+      formData.value.guidedVisit = true;
+    }
+  }
+);
+
+let modalTitle = ref("");
+let modalContent = ref("");
+
+const { open, close, patchOptions } = useModal({
+  component: SimpleModalInfo,
+  attrs: {
+    modalTitle: "",
+    modalContent: "",
+    onBack() {
+      close();
+    },
+  },
+});
+
 async function sendEmail() {
+  showSpinner.value = true;
+
   let data = {
     service_id: import.meta.env.VITE_EMAILJS_SERVICE_ID,
     template_id: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
@@ -135,7 +165,7 @@ async function sendEmail() {
       entity: formData.value.entity,
       message: formData.value.message,
       guidedVisit: formData.value.guidedVisit ? "Si" : "No especifica",
-    }
+    },
   };
   try {
     const url = "https://api.emailjs.com/api/v1.0/email/send";
@@ -144,8 +174,33 @@ async function sendEmail() {
         "Content-Type": "application/json",
       },
     });
+    showSpinner.value = false;
+    patchOptions({
+      attrs: {
+        modalTitle: "El pedido ha sido enviado de manera exitosa!",
+      },
+    });
+    open();
+
+    formData.value = {
+      name: "",
+      phone: "",
+      email: "",
+      entity: "",
+      message: "",
+      guidedVisit: false,
+    };
   } catch (error) {
+    showSpinner.value = false;
     console.log({ error });
+    patchOptions({
+      attrs: {
+        modalTitle: "Error inesperado!",
+        modalContent:
+          "El pedido no ha podido enviarse debido a un error inesperado, por favor vuelva a intentarlo!",
+      },
+    });
+    open();
   }
 }
 </script>
@@ -197,6 +252,12 @@ async function sendEmail() {
   transition: 0.2s;
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 /* custom checkbox */
 .checkbox-container {
   display: block;
@@ -228,7 +289,7 @@ async function sendEmail() {
 .checkbox-container:after {
   content: "Quiero solicitar una visita guiada";
   color: #fff;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
 }
 .checkbox-container input:checked ~ .checkmark {
@@ -258,8 +319,17 @@ async function sendEmail() {
   width: 100%;
   justify-content: center;
 }
+
+.win > span {
+  display: flex;
+  align-items: center;
+}
+.win > span > ion-icon {
+  margin-right: 0.5em;
+}
 .input-style:focus ~ .label-style,
-.input-style:valid ~ .label-style {
+.input-style:valid ~ .label-style,
+.label-style {
   top: -35px;
   font-size: 14px;
 }
@@ -293,6 +363,7 @@ async function sendEmail() {
   width: 100%;
   max-width: 70%;
 }
+
 @media (min-width: 992px) {
   .form-style {
     max-width: 40%;

@@ -200,6 +200,11 @@ input:-internal-autofill-previewed {
   color: var(--bright-yellow-crayola);
 }
 
+.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
 /* VCalendar custom style */
 .vc-light.vc-attr, .vc-light .vc-attr {
   --vc-content-color: var(--pistachio) !important;
