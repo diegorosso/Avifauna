@@ -21,13 +21,26 @@
         personas anualmente. 
        <strong> Esperamos encarecidamente que tú seas una de esas.</strong>
       </p>
-      <button class="btn btn-primary">
+      <button class="btn btn-primary" @click="scrollToContact">
         <span>Contactate con nosotros!</span>
         <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
       </button>
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  methods: {
+    scrollToContact() {
+      const contactSection = document.getElementById('Contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }
+}
+</script>
 
 <style scope>
 .hero {

@@ -1,7 +1,7 @@
 <template>
   <footer class="footer-distributed">
     <div class="footer-left">
-      <h3>Avifauna</h3>
+      <h3 @mouseenter="hoverEffect" @mouseleave="resetEffect" @click="scrollToTop">Avifauna</h3>
       <!-- 
       <p class="footer-links">
         <a href="#">El parque</a>
@@ -77,6 +77,24 @@
     </div>
   </footer>
 </template>
+
+<script setup>
+import { ref } from "vue";
+
+const hoverEffect = () => {
+  const avifaunaText = document.querySelector('.footer-left h3');
+  avifaunaText.classList.add('hover-effect');
+};
+
+const resetEffect = () => {
+  const avifaunaText = document.querySelector('.footer-left h3');
+  avifaunaText.classList.remove('hover-effect');
+};
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+</script>
 
 <style scoped>
 header {
@@ -330,5 +348,18 @@ footer {
   .footer-distributed .footer-icons {
     justify-content: center;
   }
+}
+
+.footer-distributed .footer-left h3 {
+  color: #ffffff;
+  margin: 0;
+  font-size: var(--fs-3);
+  font-family: var(--ff-oswald);
+  cursor: pointer; /* Agrega cursor pointer para indicar que es clickeable */
+}
+
+.footer-distributed .footer-left h3.hover-effect {
+  transition: color 0.3s ease; /* Transición suave */
+  color: #82ad45; /* Cambia el color al pasar el mouse */
 }
 </style>

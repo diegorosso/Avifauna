@@ -6,7 +6,7 @@
           <span class="counter">Nos acompañan {{ counter }} apadrinamientos</span>
         </h2>
 
-        <button class="btn btn-outline">
+        <button class="btn btn-outline" @click="scrollToContact">
           <span>¿Te gustaría ser colaborador?</span>
 
           <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
@@ -51,6 +51,13 @@ const handleIntersection = (entries) => {
   });
 };
 
+const scrollToContact = () => {
+  const contactSection = document.getElementById('Contact');
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
 onMounted(() => {
   const observer = new IntersectionObserver(
     (entries) => handleIntersection(entries, observer),
@@ -65,6 +72,8 @@ onMounted(() => {
     observer.observe(counterContainer.value);
   }
 });
+
+
 </script>
 
 <style scope>
