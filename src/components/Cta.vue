@@ -72,10 +72,6 @@ onMounted(() => {
   transition: opacity 1s;
 }
 
-.cta.section{
-  padding-top: 0;
-}
-
 .cta-content {
   background-color: #82ad45;
   text-align: center;
