@@ -1,7 +1,7 @@
 <template>
   <VueFinalModal
     class="confirm-modal"
-    content-class="confirm-modal-content"
+    content-class="info-modal-content"
     overlay-transition="vfm-fade"
     content-transition="vfm-fade"
   >
@@ -21,8 +21,8 @@ import { VueFinalModal } from "vue-final-modal";
   justify-content: center;
   align-items: center;
 }
-.confirm-modal-content {
-  width: 70vw;
+.info-modal-content {
+  width: 70vw !important;
   height: 90vh;
   padding: 0;
   background: #fff;
