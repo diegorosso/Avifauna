@@ -25,7 +25,7 @@
       </h3> -->
 
       <h3 class="h2 section-title" style="padding-block: 2em">
-        Próximamente entérate de nuestros eventos y activdades...
+        Próximamente entérate de nuestros eventos y actividades...
       </h3>
 
       <!-- <ul class="event-list">
