@@ -109,7 +109,7 @@
               <p class="tab-text">4€</p>
             </li>
           </ul>
-          <button class="btn btn-secondary">
+          <button @click="$emit('guidedVisit')" class="btn btn-secondary">
             <span>Planifica tu visita</span>
             <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
           </button>
@@ -185,8 +185,12 @@ import { ref } from "vue";
 
 let selectedTab = ref(1);
 
-function setTab(tab) {
+const setTab = (tab) => {
   selectedTab.value = tab;
+}
+
+const toGuidedVisitContact = (router) => {
+  
 }
 </script>
 

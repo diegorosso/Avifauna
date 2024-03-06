@@ -1,6 +1,6 @@
 <template>
   <section id="Contact">
-    <div class="hero-conteiner">
+    <div class="hero-container">
       <div class="tittle-form">
         <p class="section-subtitle">
           <img
@@ -82,6 +82,11 @@
             Mensaje</label
           >
         </div>
+
+        <label v-if="guidedVisit" class="checkbox-container">
+          <input type="checkbox" v-model="formData.guidedVisit" />
+          <span class="checkmark"></span>
+        </label>
         <button class="btn win" type="button" @click="sendEmail()">
           <ion-icon class="padding" name="paper-plane-sharp"></ion-icon>Enviar
         </button>
@@ -92,7 +97,21 @@
 
 <script setup>
 import axios from "axios";
-import { ref } from "vue";
+import { ref, watch } from "vue";
+
+const props = defineProps(["guidedVisit"]);
+const guidedVisit = ref(props.guidedVisit);
+
+watch(
+  () => props.guidedVisit,
+  (newValue, oldValue) => {
+    guidedVisit.value = newValue;
+
+    if(guidedVisit.value){
+      formData.value.guidedVisit = true;
+    }
+  }
+);
 
 const formData = ref({
   name: "",
@@ -100,6 +119,7 @@ const formData = ref({
   email: "",
   entity: "",
   message: "",
+  guidedVisit: false,
 });
 
 async function sendEmail() {
@@ -108,9 +128,15 @@ async function sendEmail() {
     template_id: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
     user_id: import.meta.env.VITE_EMAILJS_USER_ID,
     accessToken: import.meta.env.VITE_EMAILJS_ACCESS_TOKEN,
-    template_params: formData.value,
+    template_params: {
+      name: formData.value.name,
+      phone: formData.value.phone,
+      email: formData.value.email,
+      entity: formData.value.entity,
+      message: formData.value.message,
+      guidedVisit: formData.value.guidedVisit ? "Si" : "No especifica",
+    }
   };
-  
   try {
     const url = "https://api.emailjs.com/api/v1.0/email/send";
     await axios.post(url, JSON.stringify(data), {
@@ -118,7 +144,6 @@ async function sendEmail() {
         "Content-Type": "application/json",
       },
     });
-    console.log("Mando");
   } catch (error) {
     console.log({ error });
   }
@@ -126,9 +151,9 @@ async function sendEmail() {
 </script>
 
 <style scoped>
-.hero-conteiner {
+.hero-container {
   width: 100%;
-  height: 100vh;
+  padding-block: 6em;
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), #3551b5),
     url(../assets/images/banner1.jpg);
   background-position: center;
@@ -171,6 +196,64 @@ async function sendEmail() {
   display: flex;
   transition: 0.2s;
 }
+
+/* custom checkbox */
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-block: -30px 2em;
+}
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #fff;
+}
+.checkbox-container:after {
+  content: "Quiero solicitar una visita guiada";
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #fff;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+.checkbox-container .checkmark:after {
+  left: 10px;
+  top: 6px;
+  width: 5px;
+  height: 10px;
+  border: solid #212121;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
 .win {
   width: 100%;
   justify-content: center;
@@ -208,7 +291,6 @@ async function sendEmail() {
 .tittle-form {
   margin-bottom: 5rem;
   width: 100%;
-  /* max-width: 40%; */
   max-width: 70%;
 }
 @media (min-width: 992px) {

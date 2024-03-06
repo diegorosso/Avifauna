@@ -171,6 +171,31 @@ input:-internal-autofill-previewed {
   color: fieldtext !important;
 }
 
+/* Flex-box */
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+}
+.flex-wrap{
+  flex-wrap: wrap;
+}
+.align-center {
+  align-items: center;
+}
+.center {
+  justify-content: center;
+}
+.space-between {
+  justify-content: space-between;
+}
+.space-around {
+  justify-content: space-around;
+}
+
 .highlighted {
   color: var(--bright-yellow-crayola);
 }
