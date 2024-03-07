@@ -47,13 +47,116 @@
 </template>
 
 <script setup>
-function goFamilyDetail(router, name, animals) {
+const addImgs = async () => {
+  const aguilasContext = await import.meta.glob(
+    "../../public/animals/Aguilas/*.png"
+  );
+  const aguilaSortedKeys = sortKeys(aguilasContext);
+  addImg(aguilaSortedKeys, 0);
+
+  const anatidasContext = await import.meta.glob(
+    "../../public/animals/Anatidas/*.png"
+  );
+  const anatidaSortedKeys = sortKeys(anatidasContext);
+  addImg(anatidaSortedKeys, 1);
+
+  families[2].animals[0].img = "/animals/AvefriaMilitar.png";
+
+  const buhosContext = await import.meta.glob(
+    "../../public/animals/Buhos/*.png"
+  );
+  const buhosSortedKeys = sortKeys(buhosContext);
+  addImg(buhosSortedKeys, 3);
+
+  families[4].animals[0].img = "/animals/BuitreLeonado.png";
+
+  const ciguenelasContext = await import.meta.glob(
+    "../../public/animals/CiguenelasyAvocetas/*.png"
+  );
+  const ciguenelasSortedKeys = sortKeys(ciguenelasContext);
+  addImg(ciguenelasSortedKeys, 5);
+
+  const faisanesContext = await import.meta.glob(
+    "../../public/animals/Faisanes/*.png"
+  );
+  const faisanesSortedKeys = sortKeys(faisanesContext);
+  addImg(faisanesSortedKeys, 6);
+
+  families[7].animals[0].img = "/animals/FlamencoComun.png";
+  families[8].animals[0].img = "/animals/Gallos.png";
+
+  const garzasContext = await import.meta.glob(
+    "../../public/animals/Garzas/*.png"
+  );
+  const garzasSortedKeys = sortKeys(garzasContext);
+  addImg(garzasSortedKeys, 9);
+
+  const ibisContext = await import.meta.glob(
+    "../../public/animals/Ibis/*.png"
+  );
+  const ibisSortedKeys = sortKeys(ibisContext);
+  addImg(ibisSortedKeys, 10);
+
+  const lorosContext = await import.meta.glob(
+    "../../public/animals/Loros/*.png"
+  );
+  const lorosSortedKeys = sortKeys(lorosContext);
+  addImg(lorosSortedKeys, 11);
+
+  families[12].animals[0].img = "/animals/OstreroComun.png";
+
+  const pavosContext = await import.meta.glob(
+    "../../public/animals/Pavos/*.png"
+  );
+  const pavosSortedKeys = sortKeys(pavosContext);
+  addImg(pavosSortedKeys, 13);
+
+  const perdicesContext = await import.meta.glob(
+    "../../public/animals/PerdicesyCodornices/*.png"
+  );
+  const perdicesSortedKeys = sortKeys(perdicesContext);
+  addImg(perdicesSortedKeys, 14);
+
+  const ratitesContext = await import.meta.glob(
+    "../../public/animals/Ratites/*.png"
+  );
+  const ratitesSortedKeys = sortKeys(ratitesContext);
+  addImg(ratitesSortedKeys, 15);
+
+  families[16].animals[0].img = "/animals/TortolaDiamante.png";
+
+  const turacosContext = await import.meta.glob(
+    "../../public/animals/Turacos/*.png"
+  );
+  const turacosSortedKeys = sortKeys(turacosContext);
+  addImg(turacosSortedKeys, 17);
+
+  families[18].animals[0].img = "/animals/Urogallo.png";
+};
+
+addImgs();
+
+const sortKeys = (context) => {
+  return Object.keys(context).sort((a, b) => {
+    const aIndex = parseInt(a.match(/\d+/)[0]);
+    const bIndex = parseInt(b.match(/\d+/)[0]);
+    return aIndex - bIndex;
+  });
+};
+
+const addImg = (sortedKeys, index) => {
+  sortedKeys.forEach((key, i) => {
+    families[index].animals[i].img = key.substring(key.indexOf("/animals"));
+  });
+}
+
+const goFamilyDetail = (router, name, animals) => {
   localStorage.setItem("selectedFamily", JSON.stringify({ name, animals }));
 
   router.push({
     path: `/familia/${name}`,
   });
-}
+};
 
 const families = [
   {
