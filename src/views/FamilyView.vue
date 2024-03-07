@@ -1,5 +1,4 @@
 <template>
-
   <div v-if="family" class="container">
     <div class="flex-row space-between">
       <aside class="aside flex-column">
@@ -24,49 +23,44 @@
           </div>
         </header>
         <div class="card-container">
-          <div class="card-header flex-row flex-wrap space-between align-center">
-            <div>
+          <div
+            class="card-header flex-row flex-wrap space-between align-center"
+          >
+            <div class="card-info">
               <div class="card-title">{{ selectedAnimal.name }}</div>
               <div class="card-subtitle">{{ selectedAnimal.scientific }}</div>
-              
+
               <div class="data-container">
-            <p class="item">
-              <span class="highlighted"> Alimentación:</span>
-              {{
-                selectedAnimal.biology?.feeding
-                  ? selectedAnimal.biology.feeding
-                  : "-"
-              }}
-            </p>
-            <p class="item">
-              <span class="highlighted"> Tamaño:</span>
-              {{
-                selectedAnimal.biology?.size ? selectedAnimal.biology.size : "-"
-              }}
-            </p>
-            <p class="item">
-              <span class="highlighted"> Reproducción:</span>
-              {{
-                selectedAnimal.biology?.reproduction
-                  ? selectedAnimal.biology.reproduction
-                  : "-"
-              }}
-            </p>
+                <p class="item">
+                  <span class="highlighted"> Alimentación:</span>
+                  {{
+                    selectedAnimal.biology?.feeding
+                      ? selectedAnimal.biology.feeding
+                      : "-"
+                  }}
+                </p>
+                <p class="item">
+                  <span class="highlighted"> Tamaño:</span>
+                  {{
+                    selectedAnimal.biology?.size
+                      ? selectedAnimal.biology.size
+                      : "-"
+                  }}
+                </p>
+                <p class="item">
+                  <span class="highlighted"> Reproducción:</span>
+                  {{
+                    selectedAnimal.biology?.reproduction
+                      ? selectedAnimal.biology.reproduction
+                      : "-"
+                  }}
+                </p>
 
-            <p class="item">
-              <span class="highlighted"> Hábitat:</span>
-              {{ selectedAnimal.habitat ? selectedAnimal.habitat : "-" }}
-            </p>
-            <p class="item">
-              <span class="highlighted"> Estado de conservación:</span>
-              {{
-                selectedAnimal.conservation_status
-                  ? selectedAnimal.conservation_status
-                  : "-"
-              }}
-            </p>
-          </div>
-
+                <p class="item">
+                  <span class="highlighted"> Hábitat:</span>
+                  {{ selectedAnimal.habitat ? selectedAnimal.habitat : "-" }}
+                </p>
+              </div>
             </div>
             <div
               class="img-container"
@@ -86,7 +80,6 @@
           <div class="description">
             {{ selectedAnimal.description }}
           </div>
-        
         </div>
       </main>
     </div>
@@ -96,7 +89,7 @@
 <script setup>
 import { onMounted, ref } from "vue";
 
-window.scrollTo(0,0);
+window.scrollTo(0, 0);
 
 let family = ref({});
 let selectedAnimal = ref({});
@@ -105,7 +98,6 @@ let selectedAnimalIndex = ref(0);
 onMounted(() => {
   family.value = JSON.parse(localStorage.getItem("selectedFamily"));
   selectedAnimal.value = family.value?.animals[0];
-  
 });
 
 function select(index) {
@@ -157,7 +149,7 @@ function selectBack() {
 .aside > div:hover {
   color: var(--bright-yellow-crayola);
 }
-.flex-column {
+/* .flex-column {
   display: flex;
   flex-direction: column;
 }
@@ -165,7 +157,7 @@ function selectBack() {
 .flex-row {
   display: flex;
 }
-.flex-wrap{
+.flex-wrap {
   flex-wrap: wrap;
 }
 .align-center {
@@ -179,7 +171,7 @@ function selectBack() {
 }
 .space-around {
   justify-content: space-around;
-}
+} */
 
 .main {
   width: 100%;
@@ -222,6 +214,9 @@ function selectBack() {
 }
 .card-subtitle {
   font-weight: var(--fw-300);
+}
+.card-info{
+  width: 65%;
 }
 
 .img-container {
@@ -273,14 +268,17 @@ function selectBack() {
   font-weight: var(--fw-400);
 }
 @media only screen and (max-width: 768px) {
+  .card-info{
+    width: auto;
+  }
   .aside {
     display: none;
   }
-  .card-header{
+  .card-header {
     display: flex;
     flex-direction: column-reverse;
   }
-  .img-container{
+  .img-container {
     margin-bottom: 3rem;
   }
 }

@@ -241,3 +241,12 @@ input:-internal-autofill-previewed {
   }
 }
 
+@media (max-width: 520px) {
+  :root {
+
+
+    --section-padding: 2em;
+
+  }
+}
+

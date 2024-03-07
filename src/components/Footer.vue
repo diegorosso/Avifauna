@@ -40,11 +40,11 @@
         </a>
       </div>
 
-      <div>
+      <div @click="toCall(982242053)">
         <ion-icon name="call-outline"></ion-icon>
         <p class="align-item">Teléfono de las oficinas: 982 24 20 53</p>
       </div>
-      <div>
+      <div @click="toCall(686375170)">
         <ion-icon name="call-sharp"></ion-icon>
         <p class="align-item">Teléfono del parque: 686 37 51 70</p>
       </div>
@@ -100,6 +100,10 @@ const resetEffect = () => {
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
+
+const toCall = (number) => {
+  window.location.href = 'tel:' + number;
+}
 </script>
 
 <style scoped>

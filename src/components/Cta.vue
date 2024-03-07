@@ -24,7 +24,7 @@
         />
       </figure>
     </div>
-    <Partner></Partner>
+    <!-- <Partner></Partner> -->
   </section>
 </template>
 

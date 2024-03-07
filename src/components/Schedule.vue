@@ -75,47 +75,25 @@
           <li>
             <button
               class="tab-btn"
-              :class="{ active: selectedTab === 1 }"
               @click="setTab(1)"
+              :class="{ active: selectedTab === 1 }"
             >
-              Visitas guiadas
+              Horarios y tarifas
             </button>
           </li>
 
           <li>
             <button
               class="tab-btn"
-              @click="setTab(2)"
               :class="{ active: selectedTab === 2 }"
+              @click="setTab(2)"
             >
-              Horarios y tarifas
+              Visitas guiadas
             </button>
           </li>
         </ul>
 
-        <div v-if="selectedTab === 1" class="tab-content">
-          <p class="section-text">De la mano de los que más saben.</p>
-          <ul class="tab-list">
-            <li class="tab-item">
-              <div class="item-icon">
-                <ion-icon name="checkmark-circle"></ion-icon>
-              </div>
-              <p class="tab-text">Grupo mínimo 10 personas</p>
-            </li>
-            <li class="tab-item">
-              <div class="item-icon">
-                <ion-icon name="checkmark-circle"></ion-icon>
-              </div>
-              <p class="tab-text">4€</p>
-            </li>
-          </ul>
-          <button @click="$emit('guidedVisit')" class="btn btn-secondary">
-            <span>Planifica tu visita</span>
-            <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-          </button>
-        </div>
-
-        <div v-if="selectedTab === 2">
+        <div v-if="selectedTab === 1">
           <p class="section-text">Invierno:</p>
           <ul class="tab-list schedule">
             <li class="tab-item">
@@ -175,6 +153,28 @@
             </li>
           </ul>
         </div>
+
+        <div v-if="selectedTab === 2" class="tab-content">
+          <p class="section-text">De la mano de los que más saben.</p>
+          <ul class="tab-list">
+            <li class="tab-item">
+              <div class="item-icon">
+                <ion-icon name="checkmark-circle"></ion-icon>
+              </div>
+              <p class="tab-text">Grupo mínimo 10 personas</p>
+            </li>
+            <li class="tab-item">
+              <div class="item-icon">
+                <ion-icon name="checkmark-circle"></ion-icon>
+              </div>
+              <p class="tab-text">4€</p>
+            </li>
+          </ul>
+          <button @click="$emit('guidedVisit')" class="btn btn-secondary">
+            <span>Planifica tu visita</span>
+            <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -187,11 +187,9 @@ let selectedTab = ref(1);
 
 const setTab = (tab) => {
   selectedTab.value = tab;
-}
+};
 
-const toGuidedVisitContact = (router) => {
-  
-}
+const toGuidedVisitContact = (router) => {};
 </script>
 
 <style scope>

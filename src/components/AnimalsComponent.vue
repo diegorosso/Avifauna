@@ -198,7 +198,6 @@ const families = [
       { name: "Faisán swinhoe", scientific: "Lophura swinhoii" },
       { name: "Faisán venerado", scientific: "Syrmaticus reevesii" },
       { name: "Faisán hume", scientific: "Syrmaticus humiae" },
-      { name: "Faisán vietnam", scientific: "Lophura edwardsi hatinhensis" },
       { name: "Faisán noble de borneo", scientific: "Lophura ignita" },
       { name: "Faisán germain", scientific: "Polyplectron germaini" },
       { name: "Faisán prelado", scientific: "Lophura diardi" },
@@ -278,10 +277,15 @@ const families = [
         img: "/animals/loro-eclectico.jpg",
         description:
           "Presenta un dimorfismo sexual pronunciado. Los machos tienen el pico color coral, un plumaje verde con plumas rojas y azules al nivel de las alas y de la cola. Las hembras tienen el pico negro, un plumaje rojo a nivel de la cabeza y de la cola, azul a nivel de pecho y de la nuca. Viven en parejas y pequeños grupos. Las bandadas se reúnen para comer fruta madura y pasar la noche en los árboles.",
-        biology: { feeding: "Frutos secos, frutas, bayas", size: "38-43cm", reproduction: "2-4 huevos" },
-        habitat: "Bosques de tierras bajas y en regiones más abiertas con árboles altos.",
-        distribution_area: "Islas Salomón, Nueva Guinea, nordeste de Australia y Las Molucas",
-        conservation_status: "",
+        biology: {
+          feeding: "Frutos secos, frutas, bayas",
+          size: "38-43cm",
+          reproduction: "2-4 huevos",
+        },
+        habitat:
+          "Bosques de tierras bajas y en regiones más abiertas con árboles altos.",
+        distribution_area:
+          "Islas Salomón, Nueva Guinea, nordeste de Australia y Las Molucas",
       },
       { name: "Amazona frentiazul", scientific: "Amazona aestiva" },
       { name: "Lorito senegales", scientific: "Poicephalus senegalus" },
@@ -474,14 +478,14 @@ const families = [
   width: 100%;
 }
 
-@media (max-width: 880px){
-  .habitat-display{
+@media (max-width: 880px) {
+  .habitat-display {
     display: none;
   }
-  .img-container{
+  .img-container {
     height: 300px;
   }
-  .title{
+  .title {
     font-size: var(--fs-7);
   }
 }
