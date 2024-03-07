@@ -135,4 +135,15 @@ const emit = defineEmits<{
 .dark .confirm-modal-content {
   background: #000;
 }
+@media (max-width: 880px){
+  .container-modal{
+    width: 95% !important;
+    padding: 1em !important;
+    text-align: justify !important;
+    overflow-y: auto !important;
+  }
+  .confirm-modal-content{
+    height: 99vh;
+  }
+}
 </style>

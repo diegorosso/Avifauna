@@ -23,7 +23,7 @@
           <div class="title">{{ family.name }}</div>
           <div class="line"></div>
           <div class="info">{{ family.description }}</div>
-          <div class="info">
+          <div class="info habitat-display">
             <span class="orange">Hábitat:</span>
             {{ family.habitat }}
           </div>
@@ -472,5 +472,17 @@ const families = [
   object-position: top;
   height: 100%;
   width: 100%;
+}
+
+@media (max-width: 880px){
+  .habitat-display{
+    display: none;
+  }
+  .img-container{
+    height: 300px;
+  }
+  .title{
+    font-size: var(--fs-7);
+  }
 }
 </style>
