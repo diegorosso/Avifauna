@@ -54,7 +54,6 @@ const emit = defineEmits<{
   font-size: 1.2em;
   width: 55%;
   max-height: 98%;
-  overflow-y: hidden;
   padding: 4em;
   display: flex;
   flex-direction: column;

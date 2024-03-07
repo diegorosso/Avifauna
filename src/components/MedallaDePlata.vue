@@ -5,9 +5,9 @@
     overlay-transition="vfm-fade"
     content-transition="vfm-fade"
   >
-  <div class="container-img">
-    <img class="medalla" src="../assets/images/medalla.jpg" alt="" />
-  </div>
+    <div class="container-img">
+      <img class="medalla" src="../assets/images/medalla.jpg" alt="" />
+    </div>
   </VueFinalModal>
 </template>
 
@@ -28,18 +28,17 @@ import { VueFinalModal } from "vue-final-modal";
   background: #fff;
   border-radius: 0.5rem;
 }
-.container-img{
+.container-img {
   width: 100%;
   max-height: 98%;
   overflow-y: auto;
 }
-.medalla{
+.medalla {
   width: 100%;
-
 }
 @media (max-width: 520px) {
-  .confirm-modal-content{
-    height: 40vh;
+  .container-img {
+    width: 95%;
   }
 }
 </style>

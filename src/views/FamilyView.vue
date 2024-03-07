@@ -276,5 +276,12 @@ function selectBack() {
   .aside {
     display: none;
   }
+  .card-header{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .img-container{
+    margin-bottom: 3rem;
+  }
 }
 </style>
