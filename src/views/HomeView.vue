@@ -8,6 +8,7 @@
     </button>
   </div>
   <AnimalsComponent></AnimalsComponent>
+  <InvestigationComponent></InvestigationComponent>
   <Cta></Cta>
   <About></About>
   <Event></Event>
@@ -21,6 +22,7 @@ import Schedule from "../components/Schedule.vue";
 import Cta from "../components/Cta.vue";
 import About from "../components/About.vue";
 import AnimalsComponent from "../components/AnimalsComponent.vue";
+import InvestigationComponent from "../components/InvestigationComponent.vue";
 import Event from "../components/Event.vue";
 import Contact from "../components/Contact.vue";
 import MedallaDePlata from "../components/MedallaDePlata.vue";

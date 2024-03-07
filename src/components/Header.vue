@@ -111,9 +111,7 @@ export default {
   data() {
     return {
       isActive: false,
-      isTransparent: true,
-      isTransformed: false, // Nueva propiedad para controlar la transformación
-      activateHeader: false, // nueva propiedad para activar el header
+      activateHeader: false,
     };
   },
   mounted() {
@@ -129,21 +127,18 @@ export default {
     },
     toggleNav() {
       this.isActive = !this.isActive;
-      this.isTransformed = this.isActive; // Actualiza isTransformed basado en el estado del menú
     },
     closeNav() {
       this.isActive = false;
-      this.isTransformed = false;
+      if(!this.isHomeRouteActive()) this.$router.push('/');
     },
     handleScroll() {
       const scrollY = window.scrollY;
       // Verifica si el scroll es hacia abajo y si el menú no está activo
       if (scrollY > 0 && !this.isActive) {
-        // Activa la clase .header.activate
         this.$refs.header.classList.add("activate");
       } else {
         if(this.isHomeRouteActive()){
-          // Desactiva la clase .header.activate
           this.$refs.header.classList.remove("activate");
         }
       }
@@ -175,7 +170,7 @@ export default {
   background-color: transparent;
   padding-block: 18px;
   z-index: 4;
-  transition: background-color 0.3s ease; /* Agrega una transición suave al cambio de clase */
+  transition: background-color 0.3s ease;
 }
 .header::after {
   content: "";
@@ -225,7 +220,6 @@ export default {
   transition: 0.25s var(--cubic-in);
 }
 .navbar.active {
-  /* transform: translateY(-100%); */
   visibility: visible;
   transition: 0.5s var(--cubic-out);
 }
@@ -274,8 +268,8 @@ export default {
 }
 
 .header.transparent {
-  background-color: transparent !important; /* Fondo transparente cuando isTransparent es verdadero */
-  transition: background-color 0.3s ease !important; /* Agrega la transición solo para background-color */
+  background-color: transparent !important;
+  transition: background-color 0.3s ease !important;
 }
 
 @media (max-width: 991px) {
@@ -294,7 +288,6 @@ export default {
   .header-action {
     display: flex;
     align-items: center;
-    /* gap: 50px; */
   }
 
   .search-btn {
@@ -357,7 +350,6 @@ export default {
   .navbar-list {
     all: unset;
     display: flex;
-    /* gap: 10px; */
     justify-content: space-between;
   }
 

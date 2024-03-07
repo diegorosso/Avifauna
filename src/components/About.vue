@@ -69,19 +69,16 @@ const { open, close } = useModal({
 .txt-container,
 .img-container {
   width: 58%;
-  /* padding-top: 3em; */
 }
 
 .txt-container {
-  padding-top: 1em;
-  /* width: 42%; */
   width: 100%;
-  padding-bottom: 2em;
+  padding-block: calc(var(--section-padding) - .5em);
 }
 h2.section-title {
   color: #fff;
   line-height: 1.3;
-  font-size: 2.5;
+  font-size: var(--fs-4);
   padding-top: 0.3em;
 }
 
