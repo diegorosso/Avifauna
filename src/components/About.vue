@@ -73,7 +73,7 @@ const { open, close } = useModal({
 
 .txt-container {
   width: 100%;
-  padding-block: calc(var(--section-padding) - .5em);
+  padding-block: calc(var(--section-padding) - 2.5em);
 }
 h2.section-title {
   color: #fff;
