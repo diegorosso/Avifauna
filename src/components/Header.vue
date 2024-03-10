@@ -6,6 +6,7 @@
     ref="header"
   >
     <div class="container">
+      <img src="/logos/logoavifauna.png" class="img-logo" alt="">
       <h1>
         <a href="/" class="logo">Avifauna</a>
       </h1>
@@ -152,7 +153,8 @@ export default {
 
 <style>
 .navbar.familia {
-  background-color: var(--eerie-black-1);
+  /* background-color: var(--eerie-black-1); */
+  background-color: #2d2a30;
 }
 
 .container {
@@ -168,7 +170,7 @@ export default {
   left: 0;
   width: 100%;
   background-color: transparent;
-  padding-block: 18px;
+  padding-block: 14px;
   z-index: 4;
   transition: background-color 0.3s ease;
 }
@@ -183,7 +185,8 @@ export default {
   background-color: var(--white_10);
 }
 .header.activate {
-  background-color: var(--eerie-black-1);
+  /* background-color: var(--eerie-black-1); */
+  background-color: #2d2a30;
   box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.8);
 }
 .header.active::after {
@@ -196,7 +199,12 @@ export default {
   align-items: center;
   /* gap: 50px; */
 }
+.img-logo{
+ /* position: absolute; */
+ width: 100px;
+}
 .logo {
+  padding-left: .5em;
   color: var(--white);
   font-family: var(--ff-oswald);
   font-size: 3.2rem;
@@ -207,7 +215,8 @@ export default {
 }
 .navbar {
   position: fixed;
-  background-color: var(--eerie-black-1);
+  /* background-color: var(--eerie-black-1); */
+  background-color: #2d2a30;
   top: 100%;
   left: 0;
   width: 100%;
@@ -323,9 +332,9 @@ export default {
     display: none;
   }
 
-  .header {
+  /* .header {
     padding-block: 25px;
-  }
+  } */
 
   .lang-switch {
     position: relative;
