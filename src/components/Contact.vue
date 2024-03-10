@@ -1,7 +1,7 @@
 <template>
   <section id="Contact">
     <div class="hero-container">
-      <div class="tittle-form">
+      <div class="title-form">
         <p class="section-subtitle">
           <img
             src="../assets/images/subtitle-img-green.png"
@@ -87,7 +87,11 @@
           <input type="checkbox" v-model="formData.guidedVisit" />
           <span class="checkmark"></span>
         </label>
-        <button class="btn win" type="submit" :class="{disabled: !isValidForm()}">
+        <button
+          class="btn win"
+          type="submit"
+          :class="{ disabled: !isValidForm() }"
+        >
           <span v-if="!showSpinner">
             <ion-icon class="padding" name="paper-plane-sharp"></ion-icon>Enviar
           </span>
@@ -121,8 +125,15 @@ const formData = ref({
 
 const isValidForm = () => {
   const { name, phone, email, entity, message } = formData.value;
-  if (name === '' || phone === ''  || !email.includes('@') || entity === '' || message === '' ) return false
-  return true
+  if (
+    name === "" ||
+    phone === "" ||
+    !email.includes("@") ||
+    entity === "" ||
+    message === ""
+  )
+    return false;
+  return true;
 };
 
 watch(
@@ -358,7 +369,7 @@ input[type="number"]::-webkit-outer-spin-button {
   padding-top: 0.3em;
   font-size: var(--fs-3);
 }
-.tittle-form {
+.title-form {
   margin-bottom: 5rem;
   width: 100%;
   max-width: 70%;
@@ -368,8 +379,18 @@ input[type="number"]::-webkit-outer-spin-button {
   .form-style {
     max-width: 40%;
   }
-  .tittle-form {
+  .title-form {
     max-width: 40%;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-container {
+    padding-block: var(--section-padding);
+  }
+
+  .title-form, .form-style{
+    max-width: 80%;
   }
 }
 </style>

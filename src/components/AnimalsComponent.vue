@@ -591,5 +591,18 @@ const families = [
   .title {
     font-size: var(--fs-7);
   }
+
+  .family{
+    width: auto;
+    padding-inline-end: 0;
+  }
+  .card-container{
+    height: 230px;
+    width: 90%;
+    padding-inline: 1em;
+    bottom: -2.3em;
+    right: -1.2em;
+    margin-block: .5em;
+  }
 }
 </style>

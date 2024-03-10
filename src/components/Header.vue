@@ -153,7 +153,6 @@ export default {
 
 <style>
 .navbar.familia {
-  /* background-color: var(--eerie-black-1); */
   background-color: #2d2a30;
 }
 
@@ -197,11 +196,9 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* gap: 50px; */
 }
 .img-logo{
- /* position: absolute; */
- width: 100px;
+ width: 98px;
 }
 .logo {
   padding-left: .5em;
@@ -282,6 +279,12 @@ export default {
 }
 
 @media (max-width: 991px) {
+  .logo {
+    display: none;
+  }
+  .img-logo{
+    width: 60px;
+  }
   .navbar.active {
     transform: translateY(-100%);
     visibility: visible;
@@ -311,6 +314,11 @@ export default {
     grid-template-columns: 1fr 1fr;
     column-gap: 30px;
   }
+  .navbar.active {
+    transform: translateY(-100%);
+    visibility: visible;
+    transition: 0.5s var(--cubic-out);
+  }
 }
 
 @media (min-width: 1200px) {
@@ -318,7 +326,6 @@ export default {
     max-width: 1400px;
     width: 100%;
     margin-inline: auto;
-    padding-inline: 30px;
   }
 
   .section-title {
@@ -331,10 +338,6 @@ export default {
   .navbar-link > ion-icon {
     display: none;
   }
-
-  /* .header {
-    padding-block: 25px;
-  } */
 
   .lang-switch {
     position: relative;

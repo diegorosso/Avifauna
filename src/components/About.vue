@@ -111,4 +111,10 @@ h2.section-title {
     width: 42%;
   }
 }
+
+@media (max-width: 520px) {
+  .section.about{
+      padding: var(--section-padding);
+    }
+}
 </style>
