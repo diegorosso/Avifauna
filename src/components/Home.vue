@@ -44,12 +44,19 @@ export default {
 
 <style scope>
 .hero {
-  background-color: var(--eerie-black-1);
   color: var(--white);
   min-height: 700px;
   padding-block: 120px 60px;
   display: grid;
   align-items: center;
+  background-image: url("../assets/photos/DSC01286.jpg");
+  background-position: -150px 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-text{
+  display: none;
 }
 
 .section-subtitle {
@@ -147,6 +154,8 @@ export default {
   color: var(--black);
 }
 
+
+
 @media (min-width: 992px) {
   .hero {
     background-image: url("../assets/photos/DSC01202.jpg");
@@ -161,6 +170,20 @@ export default {
   .hero {
     padding-block: 200px 325px;
     background-position: center;
+  }
+}
+
+@media (max-width: 570px) {
+  .hero {
+   align-items: flex-start;
+  }
+
+  .hero > .container{
+    padding-top: 8vh;
+  }
+
+  .hero-title{
+    margin-block: 30px 3em;
   }
 }
 </style>
