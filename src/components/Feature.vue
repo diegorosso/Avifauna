@@ -79,9 +79,9 @@
   --ionicon-stroke-width: 25px;
 }
 
-.features-item .item-title {
+/* .features-item .item-title {
   margin-block-end: 10px;
-}
+} */
 
 .features-item .item-text {
   max-width: 25ch;
