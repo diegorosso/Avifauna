@@ -24,7 +24,7 @@
         </header>
         <div class="card-container">
           <div
-            class="card-header flex-row flex-wrap space-between align-center"
+            class="card-header flex-row space-between align-center"
           >
             <div class="card-info">
               <div class="card-title">{{ selectedAnimal.name }}</div>
@@ -267,7 +267,7 @@ function selectBack() {
   color: var(--bright-yellow-crayola);
   font-weight: var(--fw-400);
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 850px) {
   .card-info{
     width: auto;
   }
