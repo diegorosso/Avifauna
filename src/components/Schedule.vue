@@ -215,7 +215,6 @@ const toGuidedVisitContact = (router) => {};
   transform: rotate(0.25turn);
   position: absolute;
   top: 0;
-  /* left: 110%; */
   left: calc(100vw / 2 + 8%);
   z-index: -1;
 }

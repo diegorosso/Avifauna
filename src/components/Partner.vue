@@ -100,7 +100,6 @@ export default {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  /* gap: 50px; */
 }
 
 .swiper-backface-hidden .swiper-slide{
@@ -119,9 +118,9 @@ export default {
 }
 
 .swiper-button-prev, .swiper-button-next {
-  font-size: 24px; /* Ajustar el tamaño del icono de flecha */
-  width: 40px; /* Ajustar el ancho del botón de navegación */
-  height: 40px; /* Ajustar la altura del botón de navegación */
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
 }
 
 @media (min-width: 1200px) {

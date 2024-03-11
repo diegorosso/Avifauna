@@ -149,29 +149,6 @@ function selectBack() {
 .aside > div:hover {
   color: var(--bright-yellow-crayola);
 }
-/* .flex-column {
-  display: flex;
-  flex-direction: column;
-}
-
-.flex-row {
-  display: flex;
-}
-.flex-wrap {
-  flex-wrap: wrap;
-}
-.align-center {
-  align-items: center;
-}
-.center {
-  justify-content: center;
-}
-.space-between {
-  justify-content: space-between;
-}
-.space-around {
-  justify-content: space-around;
-} */
 
 .main {
   width: 100%;

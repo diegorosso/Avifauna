@@ -17,11 +17,6 @@ const router = createRouter({
       component: FamilyView,
       props: true,
     },
-    // {
-    //   path: '/entradas',
-    //   name: 'entradas',
-    //   component: TicketsView,
-    // }
   ]
 })
 

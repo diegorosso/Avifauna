@@ -122,8 +122,6 @@ header span {
   color: #eaa03f;
 }
 
-/* The footer is fixed to the bottom of the page */
-
 footer {
   bottom: 0;
 }
@@ -275,9 +273,9 @@ footer {
 }
 
 .footer-distributed .footer-icons a {
-  display: flex; /* Agrega un contenedor flex */
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 35px;
   height: 35px;
   cursor: pointer;
@@ -311,11 +309,11 @@ footer {
   bottom: -2px;
   width: 100%;
   height: 2px;
-  background-color: transparent; /* Inicialmente transparente */
-  transition: background-color 0.3s ease; /* Transición suave */
+  background-color: transparent;
+  transition: background-color 0.3s ease;
 }
 .footer-distributed .footer-center div p:hover::after {
-  background-color: #ffffff; /* Cambia el color del subrayado al pasar el mouse */
+  background-color: #ffffff;
 }
 
 .footer-distributed .footer-center div ion-icon {
@@ -324,19 +322,19 @@ footer {
 
 .footer-distributed .footer-center div p {
   margin: 0;
-  position: relative; /* Añadir posición relativa para alinear el subrayado */
+  position: relative;
 }
 
 .footer-distributed .footer-center div ion-icon[name="location-outline"],
 .footer-distributed .footer-center div ion-icon[name="call-outline"],
 .footer-distributed .footer-center div ion-icon[name="mail-outline"],
 .footer-distributed .footer-center div ion-icon[name="call-sharp"] {
-  color: #ffffff; /* Color blanco */
-  font-size: 30px; /* Tamaño más grande */
-  border-radius: 50%; /* Borde redondo */
-  background-color: #33383b; /* Color de fondo */
-  width: 25px; /* Ajusta el tamaño del icono */
-  height: 25px; /* Ajusta el tamaño del icono */
+  color: #ffffff;
+  font-size: 30px;
+  border-radius: 50%;
+  background-color: #33383b;
+  width: 25px;
+  height: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -371,12 +369,12 @@ footer {
   margin: 0;
   font-size: var(--fs-3);
   font-family: var(--ff-oswald);
-  cursor: pointer; /* Agrega cursor pointer para indicar que es clickeable */
+  cursor: pointer;
 }
 
 .footer-distributed .footer-left h3.hover-effect {
-  transition: color 0.3s ease; /* Transición suave */
-  color: #82ad45; /* Cambia el color al pasar el mouse */
+  transition: color 0.3s ease;
+  color: #82ad45;
 }
 
 </style>

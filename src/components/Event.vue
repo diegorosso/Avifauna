@@ -116,8 +116,6 @@
   align-items: center;
 }
 .event-list {
-  /* display: grid; */
-  /* gap: 30px; */
   display: flex;
   flex-direction: column;
   align-items: center;

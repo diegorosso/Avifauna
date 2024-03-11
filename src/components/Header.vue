@@ -186,7 +186,6 @@ export default {
   background-color: var(--white_10);
 }
 .header.activate {
-  /* background-color: var(--eerie-black-1); */
   background-color: #2d2a30;
   box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.8);
 }
@@ -214,7 +213,6 @@ export default {
 }
 .navbar {
   position: fixed;
-  /* background-color: var(--eerie-black-1); */
   background-color: #2d2a30;
   top: 100%;
   left: 0;
