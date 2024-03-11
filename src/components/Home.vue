@@ -18,8 +18,8 @@
       <p class="hero-text">
         Al día de hoy Avifauna es uno de los parques ornitológicos con mayor
         reconocimiento de la península, siendo visitado por un gran número de
-        personas anualmente. 
-       <strong> Esperamos encarecidamente que tú seas una de esas.</strong>
+        personas anualmente.
+        <strong> Esperamos encarecidamente que tú seas una de esas.</strong>
       </p>
       <button class="btn btn-primary" @click="scrollToContact">
         <span>Contactate con nosotros!</span>
@@ -33,13 +33,13 @@
 export default {
   methods: {
     scrollToContact() {
-      const contactSection = document.getElementById('Contact');
+      const contactSection = document.getElementById("Contact");
       if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth' });
+        contactSection.scrollIntoView({ behavior: "smooth" });
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scope>
@@ -49,14 +49,10 @@ export default {
   padding-block: 120px 60px;
   display: grid;
   align-items: center;
-  background-image: url("../assets/photos/DSC01286.jpg");
-  background-position: -150px 0;
+  background-image: url("../assets/photos/DSC01202.jpg");
+  background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.hero-text{
-  display: none;
 }
 
 .section-subtitle {
@@ -154,8 +150,6 @@ export default {
   color: var(--black);
 }
 
-
-
 @media (min-width: 992px) {
   .hero {
     background-image: url("../assets/photos/DSC01202.jpg");
@@ -175,15 +169,21 @@ export default {
 
 @media (max-width: 570px) {
   .hero {
-   align-items: flex-start;
+    align-items: flex-start;
+    background-image: url("../assets/photos/DSC01286.jpg");
+    background-position: -150px 0;
   }
 
-  .hero > .container{
+  .hero > .container {
     padding-top: 8vh;
   }
 
-  .hero-title{
+  .hero-title {
     margin-block: 30px 3em;
+  }
+
+  .hero-text {
+    display: none;
   }
 }
 </style>

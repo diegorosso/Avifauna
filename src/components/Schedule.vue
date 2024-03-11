@@ -57,12 +57,12 @@
 
       <div class="schedule-content">
         <p class="section-subtitle">
-          <!-- <img
+          <img
             src="../assets/images/subtitle-img-green.png"
             width="32"
             height="7"
             alt="Wavy line"
-          /> -->
+          />
 
           <span>Conócenos</span>
         </p>
