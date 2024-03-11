@@ -30,15 +30,16 @@ import { VueFinalModal } from "vue-final-modal";
 }
 .container-img {
   width: 100%;
-  max-height: 98%;
+  max-height: 100%;
   overflow-y: auto;
 }
 .medalla {
   width: 100%;
 }
 @media (max-width: 520px) {
-  .container-img {
-    width: 95%;
+  .info-modal-content {
+    width: 94vw !important;
+    height: auto !important;
   }
 }
 </style>

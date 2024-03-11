@@ -52,7 +52,6 @@
 }
 
 .features {
-  padding-block-start: 0;
   background-color: var(--eerie-black-1);
 }
 
@@ -85,15 +84,13 @@
   font-size: var(--fs-9);
 }
 
-@media (min-width: 992px) {
-  .features {
-    padding-block-start: var(--section-padding);
-  }
 
+@media (min-width: 992px) {
   .features-list {
     flex-direction: row;
   }
 }
+
 @media (min-width: 1200px) {
   .features {
     padding-block-start: 0;
