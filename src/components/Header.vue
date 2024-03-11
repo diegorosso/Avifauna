@@ -200,7 +200,7 @@ export default {
   align-items: center;
 }
 .img-logo{
- width: 80px;
+ width: 70px;
 }
 .logo {
   padding-left: .5em;
