@@ -528,6 +528,7 @@ const families = [
   padding-inline: 2em;
   bottom: 0;
   right: 0;
+  z-index: 1;
   opacity: 0.93;
   height: 270px;
   border-radius: 4px;
@@ -601,7 +602,7 @@ const families = [
     width: 90%;
     padding-inline: 1em;
     bottom: -2.3em;
-    right: -1.2em;
+    right: 1em;
     margin-block: .5em;
   }
 }
