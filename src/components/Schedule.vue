@@ -20,8 +20,8 @@
               loading="lazy"
               alt=""
               class="schedule-img w-100"
-              src="../assets/photos/DSC01286.jpg"
-            />
+              src="../assets/photos/DSC00885.jpg"
+              />
 
             <img
               src="../assets/photos/DSC01266.jpg"

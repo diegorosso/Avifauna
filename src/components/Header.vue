@@ -1,18 +1,18 @@
 <template>
   <div
     class="header"
-    :class="{ activate: (isActive && isHomeRouteActive()) || !isHomeRouteActive() }"
+    :class="{
+      activate: (isActive && isHomeRouteActive()) || !isHomeRouteActive(),
+    }"
     data-header
     ref="header"
   >
     <div class="container">
-      <div class="flex-row align-center">
-        <img src="/logos/logoavifauna.png" class="img-logo" alt="">
-        <h1>
-          <a href="/" class="logo">Avifauna</a>
-        </h1>
-      </div>
-
+      <a href="/" class="flex-row align-center">
+        <img src="/logos/logoavifauna.png" class="img-logo" alt="" />
+        <span class="logo">Avifauna</span>
+      </a>
+      
       <nav
         class="navbar"
         :class="{ active: isActive, familia: !isHomeRouteActive() }"
@@ -110,7 +110,7 @@ import RegiondoComponent from "./RegiondoComponent.vue";
 export default {
   components: {
     RegiondoComponent,
-},
+  },
   data() {
     return {
       isActive: false,
@@ -119,7 +119,6 @@ export default {
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
-
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.handleScroll);
@@ -133,7 +132,7 @@ export default {
     },
     closeNav() {
       this.isActive = false;
-      if(!this.isHomeRouteActive()) this.$router.push('/');
+      if (!this.isHomeRouteActive()) this.$router.push("/");
     },
     handleScroll() {
       const scrollY = window.scrollY;
@@ -141,7 +140,7 @@ export default {
       if (scrollY > 0 && !this.isActive) {
         this.$refs.header.classList.add("activate");
       } else {
-        if(this.isHomeRouteActive()){
+        if (this.isHomeRouteActive()) {
           this.$refs.header.classList.remove("activate");
         }
       }
@@ -198,11 +197,11 @@ export default {
   justify-content: space-between;
   align-items: center;
 }
-.img-logo{
- width: 70px;
+.img-logo {
+  width: 70px;
+  padding-right: 0.5em;
 }
 .logo {
-  padding-left: .5em;
   color: var(--white);
   font-family: var(--ff-oswald);
   font-size: 3.2rem;
@@ -282,7 +281,7 @@ export default {
   .logo {
     display: none;
   }
-  .img-logo{
+  .img-logo {
     width: 60px;
   }
   .navbar.active {
