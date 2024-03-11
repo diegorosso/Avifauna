@@ -6,14 +6,12 @@
     ref="header"
   >
     <div class="container">
-      <img src="/logos/logoavifauna.png" class="img-logo" alt="">
-      <h1>
-        <a href="/" class="logo">Avifauna</a>
-      </h1>
-
-      <button class="nav-open-btn" aria-label="Open Menu" @click="toggleNav">
-        <ion-icon name="menu-outline"></ion-icon>
-      </button>
+      <div class="flex-row align-center">
+        <img src="/logos/logoavifauna.png" class="img-logo" alt="">
+        <h1>
+          <a href="/" class="logo">Avifauna</a>
+        </h1>
+      </div>
 
       <nav
         class="navbar"
@@ -99,6 +97,10 @@
         </ul>
       </nav>
       <RegiondoComponent></RegiondoComponent>
+
+      <button class="nav-open-btn" aria-label="Open Menu" @click="toggleNav">
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
     </div>
   </div>
 </template>
