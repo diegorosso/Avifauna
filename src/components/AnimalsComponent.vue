@@ -494,7 +494,7 @@ const families = [
 
 <style scoped>
 .section-subtitle {
-  margin-left: 0.5em;
+  margin-left: 1em;
   padding-bottom: 2em;
 }
 .families-container {
