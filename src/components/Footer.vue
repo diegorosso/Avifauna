@@ -345,7 +345,10 @@ footer {
   .footer-distributed .footer-left,
   .footer-distributed .footer-center,
   .footer-distributed .footer-right {
-    display: block;
+    /* display: block; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     margin-bottom: 40px;
     text-align: center;
