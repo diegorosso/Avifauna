@@ -1,5 +1,5 @@
 <template>
-  <section class="hero" id="home">
+  <section class="hero" id="home" v-preload="'../assets/photos/DSC01202.jpg'">
     <div class="container">
       <p class="section-subtitle">
         <img
