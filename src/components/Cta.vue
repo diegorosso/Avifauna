@@ -3,7 +3,9 @@
     <div class="container" ref="counterContainer">
       <div class="cta-content">
         <h2 class="h2 section-title">
-          <span class="counter">Nos acompañan {{ counter }} apadrinamientos</span>
+          <span class="counter"
+            >Nos acompañan {{ counter }} apadrinamientos</span
+          >
         </h2>
 
         <button class="btn btn-outline" @click="scrollToContact">
@@ -13,9 +15,17 @@
         </button>
       </div>
 
-      <figure class="cta-banner" v-preload="'../assets/photos/DSC01197-compress.jpg'">
+      <figure
+        class="cta-banner"
+        v-preload="'../assets/photos/DSC01197-compress-992w.jpg'"
+      >
         <img
-          src="../assets/photos/DSC01197-compress.jpg"
+          srcset="
+            ../assets/photos/DSC01197-compress-570w.jpg 570w,
+            ../assets/photos/DSC01197-compress-768w.jpg 768w,
+            ../assets/photos/DSC01197-compress-992w.jpg 992w
+          "
+          sizes="(max-width: 570px) 570px, (max-width: 768px) 768px, (max-width: 992px) 992px, 992px"
           width="520"
           height="228"
           loading="lazy"
@@ -45,16 +55,16 @@ const handleIntersection = (entries) => {
           clearInterval(intervalId);
         }
       }, 150);
-    }else{
+    } else {
       counter.value = 0;
     }
   });
 };
 
 const scrollToContact = () => {
-  const contactSection = document.getElementById('Contact');
+  const contactSection = document.getElementById("Contact");
   if (contactSection) {
-    contactSection.scrollIntoView({ behavior: 'smooth' });
+    contactSection.scrollIntoView({ behavior: "smooth" });
   }
 };
 
@@ -72,8 +82,6 @@ onMounted(() => {
     observer.observe(counterContainer.value);
   }
 });
-
-
 </script>
 
 <style scope>

@@ -1,5 +1,9 @@
 <template>
-  <section class="hero" id="home" v-preload="'../assets/photos/DSC01202-compress.jpg'">
+  <section
+    class="hero"
+    id="home"
+    v-preload="'../assets/photos/DSC01202-compress-1200w.jpg'"
+  >
     <div class="container">
       <p class="section-subtitle">
         <img
@@ -49,7 +53,7 @@ export default {
   padding-block: 120px 60px;
   display: grid;
   align-items: center;
-  background-image: url("../assets/photos/DSC01202-compress.jpg");
+  background-image: url("../assets/photos/DSC01202-compress-1200w.jpg");
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
@@ -152,9 +156,7 @@ export default {
 
 @media (min-width: 992px) {
   .hero {
-    background-image: url("../assets/photos/DSC01202-compress.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url("../assets/photos/DSC01202-compress-1200w.jpg");
     background-position: left;
     min-height: 780px;
   }
@@ -164,13 +166,28 @@ export default {
   .hero {
     padding-block: 200px 325px;
     background-position: center;
+    background-image: url("../assets/photos/DSC01202-compress-1920w.jpg");
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .hero {
+    background-image: url("../assets/photos/DSC01202-compress-992w.jpg");
+    background-position: left;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    background-image: url("../assets/photos/DSC01202-compress-768w.jpg");
+    background-position: left;
   }
 }
 
 @media (max-width: 570px) {
   .hero {
     align-items: flex-start;
-    background-image: url("../assets/photos/DSC01286-compress.jpg");
+    background-image: url("../assets/photos/DSC01286-compress-570w.jpg");
     background-position: -150px 0;
   }
 

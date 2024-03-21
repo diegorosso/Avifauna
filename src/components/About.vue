@@ -37,8 +37,19 @@
       </button>
     </div>
 
-    <div class="img-container display-none" v-preload="'../assets/photos/DSC01286-compress.jpg'">
-      <img  class="img" src="../assets/photos/DSC01286-compress.jpg" alt="" />
+    <div
+      class="img-container display-none"
+      v-preload="'../assets/photos/DSC01286-compress-1200w.jpg'"
+    >
+      <img
+        class="img"
+        srcset="
+          ../assets/photos/DSC01286-compress-1920w.jpg 1920w,
+          ../assets/photos/DSC01286-compress-1200w.jpg 1200w
+        "
+        sizes="(max-width: 1920px) 1920px, (max-width: 1200px) 1200px, 1200px"
+        alt=""
+      />
     </div>
   </section>
 </template>
@@ -113,8 +124,8 @@ h2.section-title {
 }
 
 @media (max-width: 520px) {
-  .section.about{
-      padding: var(--section-padding);
-    }
+  .section.about {
+    padding: var(--section-padding);
+  }
 }
 </style>

@@ -13,18 +13,35 @@
         />
 
         <div class="banner-row">
-          <div class="banner-col" v-preload="'../assets/photos/DSC00885-compress.jpg'">
+          <div
+            class="banner-col"
+            v-preload="'../assets/photos/DSC00885-compress-1200w.jpg'"
+          >
             <img
               width="315"
               height="380"
               loading="lazy"
               alt=""
               class="schedule-img w-100"
-              src="../assets/photos/DSC00885-compress.jpg"
-              />
+              srcset="
+                ../assets/photos/DSC00885-compress-570w.jpg   570w,
+                ../assets/photos/DSC00885-compress-768w.jpg   768w,
+                ../assets/photos/DSC00885-compress-992w.jpg   992w,
+                ../assets/photos/DSC00885-compress-1920w.jpg 1920w,
+                ../assets/photos/DSC00885-compress-1200w.jpg 1200w
+              "
+              sizes="(max-width: 570px) 570px, (max-width: 768px) 768px, (max-width: 992px) 992px, (max-width: 1200px) 1200px, (max-width: 1920px) 1920px, 1200px"
+            />
 
             <img
-              src="../assets/photos/DSC01266-compress.jpg"
+              srcset="
+                ../assets/photos/DSC01266-compress-570w.jpg   570w,
+                ../assets/photos/DSC01266-compress-768w.jpg   768w,
+                ../assets/photos/DSC01266-compress-992w.jpg   992w,
+                ../assets/photos/DSC01266-compress-1920w.jpg 1920w,
+                ../assets/photos/DSC01266-compress-1200w.jpg 1200w
+              "
+              sizes="(max-width: 570px) 570px, (max-width: 768px) 768px, (max-width: 992px) 992px, (max-width: 1200px) 1200px, (max-width: 1920px) 1920px, 1200px"
               width="386"
               height="250"
               loading="lazy"
@@ -33,9 +50,19 @@
             />
           </div>
 
-          <div class="banner-col" v-preload="'../assets/photos/DSC01205-compress.jpg'">
+          <div
+            class="banner-col"
+            v-preload="'../assets/photos/DSC01205-compress-1200w.jpg'"
+          >
             <img
-              src="../assets/photos/DSC01205-compress.jpg"
+              srcset="
+                ../assets/photos/DSC01205-compress-570w.jpg   570w,
+                ../assets/photos/DSC01205-compress-768w.jpg   768w,
+                ../assets/photos/DSC01205-compress-992w.jpg   992w,
+                ../assets/photos/DSC01205-compress-1920w.jpg 1920w,
+                ../assets/photos/DSC01205-compress-1200w.jpg 1200w
+              "
+              sizes="(max-width: 570px) 570px, (max-width: 768px) 768px, (max-width: 992px) 992px, (max-width: 1200px) 1200px, (max-width: 1920px) 1920px, 1200px"
               width="250"
               height="277"
               loading="lazy"
@@ -49,7 +76,14 @@
               loading="lazy"
               alt=""
               class="schedule-img w-100 display-none"
-              src="../assets/photos/DSC00929-compress.jpg"
+              srcset="
+                ../assets/photos/DSC00929-compress-570w.jpg   570w,
+                ../assets/photos/DSC00929-compress-768w.jpg   768w,
+                ../assets/photos/DSC00929-compress-992w.jpg   992w,
+                ../assets/photos/DSC00929-compress-1920w.jpg 1920w,
+                ../assets/photos/DSC00929-compress-1200w.jpg 1200w
+              "
+              sizes="(max-width: 570px) 570px, (max-width: 768px) 768px, (max-width: 992px) 992px, (max-width: 1200px) 1200px, (max-width: 1920px) 1920px, 1200px"
             />
           </div>
         </div>
