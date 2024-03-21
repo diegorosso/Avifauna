@@ -42,11 +42,11 @@
 
       <div @click="toCall(982242053)">
         <ion-icon name="call-outline"></ion-icon>
-        <p class="align-item">Teléfono de las oficinas: 982 24 20 53</p>
+        <p class="align-item">Oficinas: 982 24 20 53</p>
       </div>
       <div @click="toCall(686375170)">
         <ion-icon name="call-sharp"></ion-icon>
-        <p class="align-item">Teléfono del parque: 686 37 51 70</p>
+        <p class="align-item">Parque: 686 37 51 70</p>
       </div>
       <div>
         <ion-icon name="mail-outline"></ion-icon>
