@@ -37,8 +37,8 @@
       </button>
     </div>
 
-    <div class="img-container display-none" v-preload="'../assets/photos/DSC01286.jpg'">
-      <img  class="img" src="../assets/photos/DSC01286.jpg" alt="" />
+    <div class="img-container display-none" v-preload="'../assets/photos/DSC01286-compress.jpg'">
+      <img  class="img" src="../assets/photos/DSC01286-compress.jpg" alt="" />
     </div>
   </section>
 </template>

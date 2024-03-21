@@ -13,18 +13,18 @@
         />
 
         <div class="banner-row">
-          <div class="banner-col">
+          <div class="banner-col" v-preload="'../assets/photos/DSC00885-compress.jpg'">
             <img
               width="315"
               height="380"
               loading="lazy"
               alt=""
               class="schedule-img w-100"
-              src="../assets/photos/DSC00885.jpg"
+              src="../assets/photos/DSC00885-compress.jpg"
               />
 
             <img
-              src="../assets/photos/DSC01266.jpg"
+              src="../assets/photos/DSC01266-compress.jpg"
               width="386"
               height="250"
               loading="lazy"
@@ -33,9 +33,9 @@
             />
           </div>
 
-          <div class="banner-col">
+          <div class="banner-col" v-preload="'../assets/photos/DSC01205-compress.jpg'">
             <img
-              src="../assets/photos/DSC01205.jpg"
+              src="../assets/photos/DSC01205-compress.jpg"
               width="250"
               height="277"
               loading="lazy"
@@ -49,7 +49,7 @@
               loading="lazy"
               alt=""
               class="schedule-img w-100 display-none"
-              src="../assets/photos/DSC00929.jpg"
+              src="../assets/photos/DSC00929-compress.jpg"
             />
           </div>
         </div>

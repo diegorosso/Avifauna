@@ -1,5 +1,5 @@
 <template>
-  <section class="hero" id="home" v-preload="'../assets/photos/DSC01202.jpg'">
+  <section class="hero" id="home" v-preload="'../assets/photos/DSC01202-compress.jpg'">
     <div class="container">
       <p class="section-subtitle">
         <img
@@ -49,7 +49,7 @@ export default {
   padding-block: 120px 60px;
   display: grid;
   align-items: center;
-  background-image: url("../assets/photos/DSC01202.jpg");
+  background-image: url("../assets/photos/DSC01202-compress.jpg");
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
@@ -152,7 +152,7 @@ export default {
 
 @media (min-width: 992px) {
   .hero {
-    background-image: url("../assets/photos/DSC01202.jpg");
+    background-image: url("../assets/photos/DSC01202-compress.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;
@@ -170,7 +170,7 @@ export default {
 @media (max-width: 570px) {
   .hero {
     align-items: flex-start;
-    background-image: url("../assets/photos/DSC01286.jpg");
+    background-image: url("../assets/photos/DSC01286-compress.jpg");
     background-position: -150px 0;
   }
 
