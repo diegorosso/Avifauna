@@ -13,9 +13,9 @@
         </button>
       </div>
 
-      <figure class="cta-banner">
+      <figure class="cta-banner" v-preload="'../assets/photos/DSC01197-compress.jpg'">
         <img
-          src="../assets/photos/DSC01197.jpg"
+          src="../assets/photos/DSC01197-compress.jpg"
           width="520"
           height="228"
           loading="lazy"
