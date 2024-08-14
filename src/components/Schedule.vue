@@ -144,7 +144,7 @@
           <ul class="tab-list schedule">
             <li class="tab-item">
               <p class="tab-text">
-                Martes a Domingos de 10 a 14 y de 16 a 19 hs
+                Martes a Domingos de 10 a 14 y de 16 a 20 hs
               </p>
             </li>
           </ul>
