@@ -46,7 +46,7 @@
       </div>
       <div @click="toCall(686375170)">
         <ion-icon name="call-sharp"></ion-icon>
-        <p class="align-item">Parque: 686 37 51 70</p>
+        <p class="align-item">Parque: 696 37 51 70</p>
       </div>
       <div>
         <ion-icon name="mail-outline"></ion-icon>
